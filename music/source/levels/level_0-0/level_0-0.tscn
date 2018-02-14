@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://levels/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://actors/player/bard/bard.tscn" type="PackedScene" id=2]
+
+[node name="Level_0-0" type="Node2D" index="0"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 327693, 0, 0, 327694, 2, 0, 327695, 2, 0, 393216, 536870912, 0, 393228, 0, 0, 393229, 1, 0, 393230, 3, 0, 393231, 3, 0, 458752, 536870913, 0, 458753, 536870912, 0, 458763, 0, 0, 458764, 1, 0, 458765, 3, 0, 458766, 3, 0, 458767, 3, 0, 524288, 3, 0, 524289, 536870913, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 4, 0, 524295, 4, 0, 524296, 4, 0, 524297, 2, 0, 524298, 2, 0, 524299, 1, 0, 524300, 3, 0, 524301, 3, 0, 524302, 3, 0, 524303, 3, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 5, 0, 589831, 5, 0, 589832, 5, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0 )
+
+[node name="Bard" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 168, 384 )
+
+
