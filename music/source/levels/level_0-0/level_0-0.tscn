@@ -1,9 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://levels/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://actors/player/bard/bard.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/pickup/note.tscn" type="PackedScene" id=3]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D
+var notes = []
+
+func _ready():
+	for n in $Notes.get_children():
+		n.connect(\"picked_up\", self, \"count_notes\")
+		
+func count_notes(pickup):
+	notes.append(pickup.info)
+	print(notes)"
 
 [node name="Level_0-0" type="Node2D" index="0"]
+
+script = SubResource( 1 )
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -28,5 +44,41 @@ tile_data = PoolIntArray( 327693, 0, 0, 327694, 2, 0, 327695, 2, 0, 393216, 5368
 [node name="Bard" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 168, 384 )
+
+[node name="Notes" type="Node2D" parent="." index="2"]
+
+[node name="Note" parent="Notes" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 240, 416 )
+pitch = 6
+duration = 8
+octave = 4
+
+[node name="Note2" parent="Notes" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 424, 336 )
+pitch = 5
+duration = 8
+octave = 5
+
+[node name="Note3" parent="Notes" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 584, 344 )
+pitch = 4
+duration = 8
+octave = 4
+
+[node name="Note4" parent="Notes" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 680, 408 )
+pitch = 3
+duration = 8
+octave = 5
+
+[node name="Note5" parent="Notes" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 944, 232 )
+pitch = 1
+octave = 4
 
 

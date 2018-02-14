@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 const UP = Vector2(0, -1)
 const GRAVITY = 20
-const MAX_SPEED = 200
-const JUMP_HEIGHT = -500
+const MAX_SPEED = 300
+const JUMP_HEIGHT = -600
 var velocity = Vector2()
 var can_jump = true
 
@@ -19,7 +19,7 @@ func _physics_process(delta):
 		
 	if !can_jump:
 		if velocity.y == 0:
-			$Sprite.set_animation("fall")
+#			$Sprite.set_animation("fall")
 			$Sprite.stop()
 		elif velocity.y > 10:
 			$Sprite.set_frame(1)
@@ -41,6 +41,7 @@ func walk(direction, speed = MAX_SPEED):
 	if direction != 0 and can_jump:
 		set_current_state(WALK)
 		$Sprite.set_flip_h(false if direction > 0 else true)
+		$Sprite.set_offset(Vector2(-12 * direction, -64))
 	else:
 		if can_jump:
 			set_current_state(IDLE)
@@ -48,12 +49,12 @@ func walk(direction, speed = MAX_SPEED):
 func set_current_state(state):
 	if current_state == state:
 		return
-	if state == IDLE:
-		$Sprite.play("idle")
-	elif state == WALK:
-		$Sprite.play("walk")
-	elif state == JUMP:
-		$Sprite.play("jump")
+#	if state == IDLE:
+#		$Sprite.play("idle")
+#	elif state == WALK:
+#		$Sprite.play("walk")
+#	elif state == JUMP:
+#		$Sprite.play("jump")
 		
 	current_state = state
 

@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="243.99483"
-     inkscape:cy="310.90683"
+     inkscape:zoom="0.7"
+     inkscape:cx="80.043672"
+     inkscape:cy="324.12429"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -41,7 +41,11 @@
      inkscape:window-x="54"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:snap-page="true" />
+     inkscape:snap-page="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-nodes="false"
+     inkscape:snap-others="false" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -50,7 +54,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -226,7 +230,7 @@
        style="opacity:1;fill:#483737;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.90760857;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:68.78569794;stroke-opacity:1"
        id="path4769"
        sodipodi:sides="3"
-       sodipodi:cx="32.621591"
+       sodipodi:cx="32.62159"
        sodipodi:cy="193.2561"
        sodipodi:r1="1.4609061"
        sodipodi:r2="0.73045301"
@@ -385,7 +389,7 @@
        sodipodi:r2="0.73045301"
        sodipodi:r1="1.4609061"
        sodipodi:cy="193.2561"
-       sodipodi:cx="97.083074"
+       sodipodi:cx="97.083076"
        sodipodi:sides="3"
        id="path5054"
        style="opacity:1;fill:#483737;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.90760857;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:68.78569794;stroke-opacity:1"
@@ -1001,5 +1005,12 @@
            x="-367.69553"
            y="-247.63472"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif" /></flowRegion><flowPara
-         id="flowPara5241"></flowPara></flowRoot>  </g>
+         id="flowPara5241" /></flowRoot>    <rect
+       style="opacity:0;fill:#ff8080;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4.23333311;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:68.78569794;stroke-opacity:1"
+       id="rect4603"
+       width="52.919369"
+       height="48.91032"
+       x="-140.58376"
+       y="134.23285" />
+  </g>
 </svg>
