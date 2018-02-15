@@ -1,18 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objects/pickup/pickup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/pickup/note.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://objects/pickup/flute_c4.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 48.6621
+radius = 160.0
 
 [node name="Pickup" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-pitch = 0
+_sections_unfolded = [ "Transform" ]
+pitch = 1
 duration = 4
 octave = 1
 
@@ -26,12 +28,21 @@ texture = ExtResource( 3 )
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="." index="2"]
 
-stream = null
+stream = ExtResource( 4 )
 volume_db = 0.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
-bus = "Master"
+bus = "Notes"
 area_mask = 1
+
+[node name="Tween" type="Tween" parent="." index="3"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 

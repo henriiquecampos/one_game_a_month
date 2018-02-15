@@ -3,7 +3,7 @@
 [sub_resource type="AudioEffectPitchShift" id=1]
 
 resource_name = "PitchShift"
-pitch_scale = 0.5
+pitch_scale = 1.0
 
 [resource]
 
