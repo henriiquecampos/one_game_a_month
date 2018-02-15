@@ -22,7 +22,8 @@ func _physics_process(delta):
 #			$Sprite.set_animation("fall")
 			$Sprite.stop()
 		elif velocity.y > 10:
-			$Sprite.set_frame(1)
+#			$Sprite.set_frame(1)
+			pass
 	
 func apply_jump():
 	if is_on_floor():

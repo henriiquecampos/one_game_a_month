@@ -61,9 +61,21 @@ _sections_unfolded = [ "Editor", "Limit" ]
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="Birb" parent="Notes" index="0" instance=ExtResource( 3 )]
+[node name="Pickup" parent="Notes" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 624, 432 )
-duration = 0.7
+position = Vector2( 952, 248 )
+duration = 0.5
+
+[node name="Pickup2" parent="Notes" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 1336, 192 )
+pitch = 1.5
+duration = 1.007
+
+[node name="Pickup3" parent="Notes" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 1992, 96 )
+pitch = 1.25
+duration = 1.2
 
 
