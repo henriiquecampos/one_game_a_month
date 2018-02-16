@@ -6,6 +6,7 @@ const NOTE_UI = preload("res://interface/note_duration/note_duration.tscn")
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact") and can_interact:
+		$Animator.play("flute")
 		can_interact = false
 		if Input.is_key_pressed(KEY_Z):
 			interact(1.0)
@@ -26,15 +27,29 @@ func interact(pitch):
 		s.max_value = note_object.duration
 		add_child(s)
 	else:
-		resume()
+		miss()
 		print("wrong pitch")
 	
 func resume():
+	$Animator.play("rest")
 	$Flute.stop()
 	can_interact = true
 	set_physics_process(true)
 	set_process(true)
 	
+func miss():
+	$Animator.play("miss")
+	note_object.miss()
+	yield($Animator, "animation_finished")
+	resume()
+	
+func success():
+	$Flute.stop()
+	$Animator.play("success")
+	note_object.success()
+	yield($Animator, "animation_finished")
+	resume()
+
 func check_pitch(pitch):
 	if pitch == note_object.pitch:
 		return(true)
