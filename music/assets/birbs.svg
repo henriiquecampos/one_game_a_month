@@ -26,7 +26,7 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="659.7593"
+     inkscape:cx="331.45973"
      inkscape:cy="504.36261"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -51,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -97,9 +97,9 @@
        height="67.733337"
        x="203.20001"
        y="229.26662"
-       inkscape:export-filename="Z:\Pigdev\games\one_game_a_month\music\source\objects\birbs.png"
-       inkscape:export-xdpi="47.999996"
-       inkscape:export-ydpi="47.999996" />
+       inkscape:export-filename="Z:\Pigdev\games\one_game_a_month\music\source\objects\exclamation.png"
+       inkscape:export-xdpi="11.999997"
+       inkscape:export-ydpi="11.999997" />
     <rect
        style="opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.78918231;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:68.78569794;stroke-opacity:1"
        id="rect11414"
@@ -1570,6 +1570,22 @@
            rx="7.7362885"
            ry="4.7210574" />
       </g>
+    </g>
+    <g
+       id="g4691"
+       transform="translate(-1.5032279,3.6138757)">
+      <path
+         sodipodi:nodetypes="sssssss"
+         inkscape:connector-curvature="0"
+         id="rect4684"
+         d="m 238.56991,229.26663 c 3.25635,0 6.04943,2.86632 5.8779,6.41745 l -1.56837,32.46982 c -0.12576,2.60359 -1.92206,4.70511 -4.30953,4.70511 -2.38748,0 -4.18378,-2.10152 -4.30954,-4.70511 L 232.692,235.68408 c -0.17153,-3.55113 2.62155,-6.41745 5.87791,-6.41745 z"
+         style="opacity:1;fill:#f64483;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.55260766;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:68.78569794;stroke-opacity:1" />
+      <circle
+         r="4.705112"
+         cy="285.06708"
+         cx="238.96548"
+         id="path4686"
+         style="opacity:1;fill:#f64483;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.33080661;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:68.78569794;stroke-opacity:1" />
     </g>
   </g>
 </svg>

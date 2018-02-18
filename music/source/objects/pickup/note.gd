@@ -5,6 +5,8 @@ export (float) var duration = 4
 export (int) var octave = 1
 onready var info = [pitch, duration, octave]
 
+const EXCLAMATION = preload("res://objects/pickup/exclamation.tscn")
+
 func _on_body_entered(body):
 	if body.is_in_group("players"):
 		sing()
@@ -25,9 +27,13 @@ func sing():
 	$SFX.stop()
 	
 func miss():
+#	var s = EXCLAMATION.instance()
+#	add_child(s)
+	$Exclamation.show()
 	$Sprite.frame = 12
 	
 func success():
+	$Exclamation.hide()
 	$Sprite.frame = 1
 	$Tween.interpolate_property(self, "position", position, position + Vector2(0, -300), 2.0,Tween.TRANS_SINE, Tween.EASE_IN)
 	$Tween.start()
@@ -35,6 +41,8 @@ func success():
 	queue_free()
 
 func _on_body_exited( body ):
+	$Exclamation.hide()
+	$Sprite.frame = 3
 	if body.is_in_group("players"):
 		body.can_interact = false
 		body.note_object = null
