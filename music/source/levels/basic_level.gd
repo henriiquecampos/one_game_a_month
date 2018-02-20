@@ -7,6 +7,6 @@ func _ready():
 		o.connect("tree_exited", self, "check_objective", [o])
 		
 func check_objective(what):
-	if what.has_meta("score"):
+	if what.has_method("score"):
 		emit_signal("score_increased", [what.score])
 	objectives -= 1
