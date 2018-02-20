@@ -5,8 +5,6 @@ export (float) var duration = 4
 export (int) var octave = 1
 onready var info = [pitch, duration, octave]
 
-const EXCLAMATION = preload("res://objects/pickup/exclamation.tscn")
-
 func _on_body_entered(body):
 	if body.is_in_group("players"):
 		sing()

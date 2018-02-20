@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exclamation.png-9b5fcb3cfce4bd6e1a4d98422102b71f.stex"
+path="res://.import/birbs.png-c0ceddd83d5489a94dcebbb046e93e33.stex"
 
 [deps]
 
-source_file="res://objects/exclamation.png"
-source_md5="1723ccfc6ef4c945b30b2a1ebba9dde3"
+source_file="res://actors/birds/birbs.png"
+source_md5="56bd7560b216d9f5fc3332edb4b51d74"
 
-dest_files=[ "res://.import/exclamation.png-9b5fcb3cfce4bd6e1a4d98422102b71f.stex" ]
-dest_md5="0d661e830aa544a1752d0e539cf753f3"
+dest_files=[ "res://.import/birbs.png-c0ceddd83d5489a94dcebbb046e93e33.stex" ]
+dest_md5="a68495a4fd495f8dc31470ba344d7ded"
 
 [params]
 
