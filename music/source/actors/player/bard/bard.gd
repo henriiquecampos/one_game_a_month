@@ -28,7 +28,6 @@ func interact(pitch):
 		add_child(s)
 	else:
 		miss()
-		print("wrong pitch")
 	
 func resume():
 	$Animator.play("rest")
