@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://levels/tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://objects/pickup/note.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actors/birds/bird.tscn" type="PackedScene" id=2]
 [ext_resource path="res://actors/player/bard/bard.tscn" type="PackedScene" id=3]
+
+
 
 [node name="Level_0-0" type="Node2D" index="0"]
 

@@ -18,3 +18,4 @@ func apply_transition(mode):
 	else:
 		a.play_backwards("transition")
 	yield(a, "animation_finished")
+	emit_signal("transition_finished")
