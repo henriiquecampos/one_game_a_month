@@ -6,6 +6,8 @@ const MAX_SPEED = 300
 const JUMP_HEIGHT = -600
 var velocity = Vector2()
 var can_jump = true
+var falling = false
+onready var init_scale = $Sprites.get_scale()
 
 enum STATES{IDLE, WALK, JUMP}
 var current_state = IDLE setget set_current_state, get_current_state
@@ -18,12 +20,9 @@ func _physics_process(delta):
 		can_jump = true
 		
 	if !can_jump:
-		if velocity.y == 0:
-#			$Sprite.set_animation("fall")
-			$Sprite.stop()
-		elif velocity.y > 10:
-#			$Sprite.set_frame(1)
-			pass
+		if velocity.y >= 1 and !falling:
+			falling = true
+			$Animator.play("fall")
 	
 func apply_jump():
 	if is_on_floor():
@@ -41,21 +40,22 @@ func walk(direction, speed = MAX_SPEED):
 	
 	if direction != 0 and can_jump:
 		set_current_state(WALK)
-		$Sprite.set_flip_h(false if direction > 0 else true)
-		$Sprite.set_offset(Vector2(-12 * direction, -64))
 	else:
 		if can_jump:
 			set_current_state(IDLE)
+	if direction != 0:
+		$Sprites.scale = Vector2(init_scale.x *-1, init_scale.y) if direction < 0 else init_scale
 
 func set_current_state(state):
 	if current_state == state:
 		return
-#	if state == IDLE:
-#		$Sprite.play("idle")
-#	elif state == WALK:
-#		$Sprite.play("walk")
-#	elif state == JUMP:
-#		$Sprite.play("jump")
+	if state == IDLE:
+		falling = false
+		$Animator.play("rest")
+	elif state == WALK:
+		$Animator.play("walk")
+	elif state == JUMP:
+		$Animator.play("jump")
 		
 	current_state = state
 
