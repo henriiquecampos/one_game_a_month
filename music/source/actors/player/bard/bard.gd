@@ -59,7 +59,7 @@ func miss():
 func success():
 	$Flute.stop()
 	$Animator.play("success")
-	note_object.success()
+	object.success()
 	yield($Animator, "animation_finished")
 	resume()
 

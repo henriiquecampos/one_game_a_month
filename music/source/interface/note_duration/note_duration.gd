@@ -12,7 +12,7 @@ func _process(delta):
 	#time with a small tolerance of 0.1 seconds
 	if Input.is_action_just_released("interact"):
 		if hold < max_value:
-			get_parent().note_object.miss()
+			get_parent().object.miss()
 			get_parent().resume()
 		elif hold >= max_value and hold <= max_value + 0.1:
 			get_parent().success()
