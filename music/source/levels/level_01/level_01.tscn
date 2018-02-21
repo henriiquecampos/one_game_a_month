@@ -19,7 +19,7 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Birb" parent="Objectives" index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 910, 210 )
+position = Vector2( 470, 90 )
 flip_h = true
 
 [node name="TileMap" parent="." index="1"]

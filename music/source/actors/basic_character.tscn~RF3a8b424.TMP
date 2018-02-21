@@ -2,7 +2,7 @@
 
 [ext_resource path="res://actors/basic_character.gd" type="Script" id=1]
 
-[node name="BasicCharacter" type="KinematicBody2D" index="0"]
+[node name="BasicCharacter" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -24,5 +24,3 @@ blend_times = [  ]
 [node name="Sprites" type="Node2D" parent="." index="2"]
 
 _sections_unfolded = [ "Transform" ]
-
-

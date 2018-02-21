@@ -7,7 +7,6 @@
 [ext_resource path="res://levels/tilesets/tile_05.png" type="Texture" id=5]
 [ext_resource path="res://levels/tilesets/tile_06.png" type="Texture" id=6]
 
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
