@@ -15,7 +15,6 @@ radius = 160.0
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-pitch = 1
 duration = 1
 sprite_row = 0
 flip_h = false
