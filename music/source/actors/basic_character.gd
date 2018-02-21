@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
 const UP = Vector2(0, -1)
-const GRAVITY = 20
-const MAX_SPEED = 300
-const JUMP_HEIGHT = -600
+const GRAVITY = 50
+const MAX_SPEED = 400
+const JUMP_HEIGHT = -1200
 var velocity = Vector2()
 var can_jump = true
 var falling = false
@@ -20,7 +20,7 @@ func _physics_process(delta):
 		can_jump = true
 		
 	if !can_jump:
-		if velocity.y >= 1 and !falling:
+		if velocity.y >= 10 and !falling:
 			falling = true
 			$Animator.play("fall")
 	

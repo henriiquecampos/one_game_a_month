@@ -7,7 +7,7 @@ const NOTE_UI = preload("res://interface/note_duration/note_duration.tscn")
 func _process(delta):
 	#Start the interaction if it can, then check for which pitch the 
 	#player is trying to use in the interaction
-	if Input.is_action_just_pressed("interact") and can_interact:
+	if Input.is_action_just_pressed("interact") and can_interact and current_state != JUMP:
 		$Animator.play("flute")
 		can_interact = false
 		if Input.is_key_pressed(KEY_Z):
