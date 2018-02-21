@@ -4,7 +4,7 @@
 
 format = 1
 loop_mode = 1
-loop_begin = 6140
+loop_begin = 6818
 loop_end = 9360
 mix_rate = 44100
 stereo = true
