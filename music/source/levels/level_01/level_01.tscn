@@ -31,34 +31,23 @@ position = Vector2( 2446, 276 )
 
 shape = SubResource( 1 )
 
-[node name="Bard" parent="." index="4" instance=ExtResource( 4 )]
+[node name="Player" parent="." index="4" instance=ExtResource( 4 )]
 
 editor/display_folded = true
 position = Vector2( 186, 504 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
 
-[node name="Animator" parent="Bard" index="1"]
-
-root_node = NodePath("..")
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-blend_times = [  ]
-
-[node name="Sprites" parent="Bard" index="3"]
+[node name="Sprites" parent="Player" index="3"]
 
 editor/display_folded = true
-_sections_unfolded = [ "Transform" ]
 
-[node name="CameraRig" parent="Bard" index="4"]
+[node name="CameraRig" parent="Player" index="4"]
 
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" parent="." index="5"]
 
 position = Vector2( 186, 504 )
+current = true
 limit_left = 0
 _sections_unfolded = [ "Editor", "Limit", "Transform" ]
 
@@ -67,4 +56,4 @@ _sections_unfolded = [ "Editor", "Limit", "Transform" ]
 next_scene = "res://screens/main_screen/main_screen.tscn"
 
 
-[editable path="Bard"]
+[editable path="Player"]

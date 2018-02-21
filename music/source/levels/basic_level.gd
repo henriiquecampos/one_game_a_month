@@ -19,4 +19,6 @@ func _portal_body_entered(body):
 func check_completion():
 	if $Objectives.get_child_count() == 0:
 		print("completed")
+		$Player.resume()
+		$Player.set_physics_process(false)
 		$Screen/GameScreen.change_scene()

@@ -5,13 +5,12 @@
 [ext_resource path="res://actors/birds/flute_c4.tres" type="AudioStream" id=3]
 [ext_resource path="res://actors/player/bard/sprite_sheet.png" type="Texture" id=4]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 62 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 
 resource_name = "fall"
 length = 0.3
@@ -186,7 +185,7 @@ tracks/13/keys = {
 "values": [ 0.0, 63.4789 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 
 resource_name = "flute"
 length = 0.4
@@ -301,7 +300,7 @@ tracks/8/keys = {
 "values": [ 0.0, -39.6302 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 resource_name = "jump"
 length = 0.3
@@ -488,7 +487,7 @@ tracks/14/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 
 resource_name = "miss"
 length = 0.8
@@ -699,9 +698,8 @@ tracks/16/keys = {
 "values": [ Rect2( 99, 104, 82, 87 ), Rect2( 99, 9, 82, 83 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=6]
 
-resource_name = "rest"
 length = 0.2
 loop = false
 step = 0.1
@@ -1006,7 +1004,7 @@ tracks/24/keys = {
 "values": [ Rect2( 9, -1, 83, 91 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=7]
 
 resource_name = "success"
 length = 0.8
@@ -1217,9 +1215,8 @@ tracks/16/keys = {
 "values": [ Rect2( 99, 104, 82, 87 ), Rect2( 9, 104, 81, 87 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=8]
 
-resource_name = "walk"
 length = 1.2
 loop = true
 step = 0.1
@@ -1368,36 +1365,24 @@ tracks/11/keys = {
 "values": [ 0.0, 41.003 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Sprites/Body/Tail:flip_v")
+tracks/12/path = NodePath("Sprites/Body/Head:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 0.4, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, false, true ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("Sprites/Body/Head:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 2, -54 ) ]
 }
-tracks/14/type = "value"
-tracks/14/path = NodePath("Sprites/Body/Head:rotation_degrees")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
+tracks/13/type = "value"
+tracks/13/path = NodePath("Sprites/Body/Head:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -1419,13 +1404,13 @@ _sections_unfolded = [ "Transform" ]
 
 autoplay = "rest"
 playback_speed = 2.0
-anims/fall = SubResource( 6 )
-anims/flute = SubResource( 7 )
-anims/jump = SubResource( 5 )
-anims/miss = SubResource( 8 )
-anims/rest = SubResource( 3 )
-anims/success = SubResource( 9 )
-anims/walk = SubResource( 4 )
+anims/fall = SubResource( 2 )
+anims/flute = SubResource( 3 )
+anims/jump = SubResource( 4 )
+anims/miss = SubResource( 5 )
+anims/rest = SubResource( 6 )
+anims/success = SubResource( 7 )
+anims/walk = SubResource( 8 )
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="Flute" type="AudioStreamPlayer2D" parent="." index="2"]
@@ -1456,18 +1441,17 @@ _sections_unfolded = [ "Region" ]
 
 show_behind_parent = true
 position = Vector2( 2, -54 )
-rotation = -0.179162
 z_index = -1
 texture = ExtResource( 4 )
 offset = Vector2( -12, -38 )
 region_enabled = true
-region_rect = Rect2( 9, 104, 81, 87 )
+region_rect = Rect2( 9, -1, 83, 91 )
 _sections_unfolded = [ "Region", "Visibility", "Z Index" ]
 
 [node name="Arm_L" type="Sprite" parent="Sprites/Body" index="1"]
 
 position = Vector2( 13.5, -44 )
-rotation = -1.99872
+rotation = -0.416584
 z_index = -1
 texture = ExtResource( 4 )
 offset = Vector2( 0, 18 )
@@ -1477,9 +1461,8 @@ _sections_unfolded = [ "Region", "Z Index" ]
 
 [node name="Flute" type="Sprite" parent="Sprites/Body/Arm_L" index="0"]
 
-position = Vector2( -0.0529327, 27.4355 )
-rotation = 3.21373
-scale = Vector2( 1, 1 )
+position = Vector2( -0.0829277, 31.6508 )
+rotation = 1.44688
 texture = ExtResource( 4 )
 offset = Vector2( -2, -32 )
 region_enabled = true
@@ -1489,7 +1472,7 @@ _sections_unfolded = [ "Region", "Z Index" ]
 [node name="Arm_R" type="Sprite" parent="Sprites/Body" index="2"]
 
 position = Vector2( -14, -46.5 )
-rotation = 0.853856
+rotation = 0.362102
 texture = ExtResource( 4 )
 offset = Vector2( 0, 20 )
 region_enabled = true
@@ -1499,7 +1482,6 @@ _sections_unfolded = [ "Region" ]
 [node name="Tail" type="Sprite" parent="Sprites/Body" index="3"]
 
 position = Vector2( -10, -12 )
-rotation = -0.0616112
 z_index = -2
 texture = ExtResource( 4 )
 offset = Vector2( -28, -4 )
