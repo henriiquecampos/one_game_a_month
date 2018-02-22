@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_02.png-ecdbbce764ffaf28c640f4f6601fc624.stex"
+path="res://.import/foliage_05.png-e4866f476707ec29b5a72242cd296e53.stex"
 
 [deps]
 
-source_file="res://levels/tilesets/tile_02.png"
-source_md5="886d1abb61632240480844077e20a6a0"
+source_file="res://levels/tilesets/foliage_05.png"
+source_md5="dd8df8c628770af55c9d3355586eeda8"
 
-dest_files=[ "res://.import/tile_02.png-ecdbbce764ffaf28c640f4f6601fc624.stex" ]
-dest_md5="b72487e72bd334f6bfe8cac798339c1f"
+dest_files=[ "res://.import/foliage_05.png-e4866f476707ec29b5a72242cd296e53.stex" ]
+dest_md5="5958f55730b48091566c000e249e0af8"
 
 [params]
 

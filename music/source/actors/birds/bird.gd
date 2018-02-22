@@ -63,7 +63,7 @@ func set_flip_h(value):
 func set_sprite_row(value):
 	sprite_row = value
 	$Sprite.frame = (sprite_row * 4) + 3
-	
+	#Set the pitch according to the row of being used in the Sprite
 	if value == 0:
 		pitch = 1.0
 	elif value == 1:
