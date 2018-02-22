@@ -1,10 +1,11 @@
 tool
 extends "res://objects/pickup/pickup.gd"
 
-export (float, 0.25, 2.0, 0.20) var duration = 1
+export (float, 0.25, 2.0, 0.25) var duration = 1.0
 onready var info = [pitch, duration]
 export (int, 0, 2) var sprite_row = 0 setget set_sprite_row
 export (bool) var flip_h = false setget set_flip_h
+const COLORS = [Color("bc5fd3"), Color("8d5fd3"), Color("37c871")]
 var pitch = 1
 var success = false
 
@@ -12,6 +13,9 @@ func sing():
 	$Sprite.frame = (sprite_row * 4) + 2
 	#Find the pitch sound effect then apply the bird's pitch in pitch_scale
 	#and plays the audio in the SFX Node
+	var note = load("res://interface/note_duration/note.tscn").instance()
+	add_child(note)
+	note.set_modulate(COLORS[sprite_row])
 	var bus = AudioServer.get_bus_index($SFX.get_bus())
 	var fx = AudioServer.get_bus_effect(bus, 0)
 	fx.set_pitch_scale(pitch)
@@ -22,6 +26,8 @@ func sing():
 	$Timer.start()
 	yield($Timer, "timeout")
 	$Sprite.frame = (sprite_row * 4) + 3
+	note.get_node("Animator").stop()
+	note.finished()
 	$SFX.stop()
 	
 func miss():

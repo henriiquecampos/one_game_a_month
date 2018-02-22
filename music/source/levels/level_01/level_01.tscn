@@ -33,7 +33,6 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Objectives" parent="." index="1"]
 
-editor/display_folded = true
 z_index = -1
 _sections_unfolded = [ "Z Index" ]
 
@@ -60,7 +59,6 @@ sprite_row = 2
 [node name="Birb4" parent="Objectives" index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 2035, 120 )
-duration = 0.8
 sprite_row = 2
 
 [node name="Birb5" parent="Objectives" index="4" instance=ExtResource( 3 )]
