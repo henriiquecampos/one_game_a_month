@@ -167,6 +167,7 @@ shape = SubResource( 1 )
 [node name="Camera2D" parent="." index="5"]
 
 position = Vector2( 312, 456 )
+offset = Vector2( 0, -128 )
 current = true
 limit_left = 0
 _sections_unfolded = [ "Editor", "Limit", "Offset", "Transform" ]

@@ -29,6 +29,7 @@ func miss():
 	$Sprite.frame = 12 + sprite_row
 	
 func success():
+	$Shape.set_disabled(true)
 	$Sprite/Exclamation.hide()
 	$Sprite.frame = (sprite_row * 4) + 1
 	success = true
