@@ -82,6 +82,27 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="6"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1024, 0 )
+_sections_unfolded = [ "Motion" ]
+
 [connection signal="transition_finished" from="Screen/GameScreen" to="Camera2D" method="_set_current" binds= [ true ]]
 
 
