@@ -1,11 +1,11 @@
 tool
 extends "res://objects/pickup/pickup.gd"
 
-export (float) var pitch = 1
-export (float) var duration = 1
+export (float, 0.25, 2.0, 0.20) var duration = 1
 onready var info = [pitch, duration]
 export (int, 0, 2) var sprite_row = 0 setget set_sprite_row
 export (bool) var flip_h = false setget set_flip_h
+var pitch = 1
 var success = false
 
 func sing():
@@ -29,6 +29,7 @@ func miss():
 	$Sprite.frame = 12 + sprite_row
 	
 func success():
+	$Shape.set_disabled(true)
 	$Sprite/Exclamation.hide()
 	$Sprite.frame = (sprite_row * 4) + 1
 	success = true
@@ -58,8 +59,15 @@ func _on_body_exited( body ):
 
 func set_flip_h(value):
 	flip_h = value
-	$Sprite.scale.x *= -1
+	$Sprite.scale.x = -0.5 if flip_h else 0.5
 
 func set_sprite_row(value):
 	sprite_row = value
 	$Sprite.frame = (sprite_row * 4) + 3
+	#Set the pitch according to the row of being used in the Sprite
+	if value == 0:
+		pitch = 1.0
+	elif value == 1:
+		pitch = 1.25
+	else:
+		pitch = 1.5

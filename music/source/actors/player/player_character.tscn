@@ -16,5 +16,3 @@ use_global_coordinates = true
 update_position = true
 update_rotation = true
 update_scale = true
-
-

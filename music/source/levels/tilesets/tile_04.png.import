@@ -7,10 +7,10 @@ path="res://.import/tile_04.png-f9255ee47dd353473b4bffa467477d9c.stex"
 [deps]
 
 source_file="res://levels/tilesets/tile_04.png"
-source_md5="7988a86c408277ca124fca9069051140"
+source_md5="b9bb399a917927120c00d1da7001875a"
 
 dest_files=[ "res://.import/tile_04.png-f9255ee47dd353473b4bffa467477d9c.stex" ]
-dest_md5="ff4aa491e1203b4ffb4abaca8662550d"
+dest_md5="fb1f0c7a3134deb2f98c44ff1802dfb6"
 
 [params]
 
