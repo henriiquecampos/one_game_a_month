@@ -3,8 +3,9 @@ extends "res://actors/player/player_character.gd"
 var can_interact = true
 var object = null
 const NOTE = preload("res://interface/note_duration/note.tscn")
-enum KEYS{Z, X, C}
 var note = null
+enum KEYS{Z, X, C}
+var check = false
 func _process(delta):
 	#Start the interaction if it can, then check for which pitch the 
 	#player is trying to use in the interaction
@@ -24,15 +25,15 @@ func _process(delta):
 			pitch = 1.50
 		add_child(note)
 		interact(pitch)
-		if can_interact and object != null:
-			if !check_pitch(pitch, object.pitch):
-				miss()
+		if object != null:
+			check = check_pitch(pitch, object.pitch)
+			if !check:
 				object.miss()
 	if Input.is_action_just_released("interact") and note != null and can_interact:
 		var duration = note.duration
 		note.finished()
 		if object != null:
-			if check_duration(duration, object.note_duration):
+			if check_duration(duration, object.note_duration) and check:
 				success()
 				object.success()
 			else:
