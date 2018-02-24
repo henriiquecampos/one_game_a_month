@@ -7,14 +7,20 @@
 [sub_resource type="GDScript" id=3]
 
 script/source = "extends Node2D
-
+const COLORS = [Color(\"bc5fd3\"), Color(\"8d5fd3\"), Color(\"37c871\")]
+var duration = 16
 func finished():
 	$Animator.play(\"finish\")
 	var t = $Tween
 	t.interpolate_property(self, \"position\", get_position(), get_position() + Vector2(0, -100), 1.0, t.TRANS_LINEAR, t.EASE_IN)
 	t.start()
 	yield(t, \"tween_completed\")
-	queue_free()"
+	queue_free()
+
+func _on_texture_changed():
+	duration /= 2
+	print(duration)
+"
 
 [sub_resource type="Animation" id=4]
 
@@ -83,6 +89,8 @@ playback/speed = 1.0
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
 position = Vector2( 3.34721, 0 )
-texture = ExtResource( 3 )
+texture = ExtResource( 1 )
+
+[connection signal="texture_changed" from="Sprite" to="." method="_on_texture_changed"]
 
 

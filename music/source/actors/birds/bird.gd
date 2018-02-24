@@ -5,8 +5,8 @@ export (float, 0.25, 2.0, 0.25) var duration = 1.0
 onready var info = [pitch, duration]
 export (int, 0, 2) var sprite_row = 0 setget set_sprite_row
 export (bool) var flip_h = false setget set_flip_h
-const COLORS = [Color("bc5fd3"), Color("8d5fd3"), Color("37c871")]
-var pitch = 1
+var pitch = 1.0
+var note_duration = 0
 var success = false
 
 func sing():
@@ -15,7 +15,8 @@ func sing():
 	#and plays the audio in the SFX Node
 	var note = load("res://interface/note_duration/note.tscn").instance()
 	add_child(note)
-	note.set_modulate(COLORS[sprite_row])
+	note_duration = note.duration
+	note.set_modulate(note.COLORS[sprite_row])
 	var bus = AudioServer.get_bus_index($SFX.get_bus())
 	var fx = AudioServer.get_bus_effect(bus, 0)
 	fx.set_pitch_scale(pitch)
@@ -27,6 +28,7 @@ func sing():
 	yield($Timer, "timeout")
 	$Sprite.frame = (sprite_row * 4) + 3
 	note.get_node("Animator").stop()
+	note_duration = note.duration
 	note.finished()
 	$SFX.stop()
 	
