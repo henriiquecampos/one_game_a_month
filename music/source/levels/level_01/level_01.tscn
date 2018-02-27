@@ -11,7 +11,7 @@
 [ext_resource path="res://actors/player/bard/bard.tscn" type="PackedScene" id=9]
 [ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
 extents = Vector2( 48, 104 )
@@ -160,7 +160,7 @@ position = Vector2( 3470, 90 )
 
 [node name="Shape" parent="Portal" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 11 )
 
 [node name="Camera2D" parent="." index="5"]
 

@@ -13,7 +13,7 @@ func _process(delta):
 		$Animator.play("flute")
 		var pitch = 0.0
 		note = NOTE.instance()
-		note.position += Vector2(32, -128)
+		note.position += Vector2(32, -150)
 		if Input.is_key_pressed(KEY_Z):
 			note.set_modulate(note.COLORS[Z])
 			pitch = 1.0
