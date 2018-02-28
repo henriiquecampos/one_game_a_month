@@ -172,6 +172,7 @@ _sections_unfolded = [ "Editor", "Limit", "Offset", "Transform" ]
 
 [node name="GameScreen" parent="Screen" index="0"]
 
+theme = null
 next_scene = "res://screens/main_screen/main_screen.tscn"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="7"]

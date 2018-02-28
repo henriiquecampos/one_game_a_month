@@ -1,0 +1,366 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://screens/basic_screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screens/tutorial_screen/tutorial_screen.gd" type="Script" id=2]
+[ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=3]
+[ext_resource path="res://levels/tilesets/tree_01.png" type="Texture" id=4]
+[ext_resource path="res://levels/tilesets/foliage_08.png" type="Texture" id=5]
+[ext_resource path="res://levels/tilesets/foliage_00.png" type="Texture" id=6]
+[ext_resource path="res://levels/tilesets/rock_00.png" type="Texture" id=7]
+[ext_resource path="res://levels/tilesets/foliage_01.png" type="Texture" id=8]
+[ext_resource path="res://levels/tilesets/tileset.tres" type="TileSet" id=9]
+[ext_resource path="res://actors/player/bard/sprite_sheet.png" type="Texture" id=10]
+[ext_resource path="res://screens/tutorial_screen/helper.tscn" type="PackedScene" id=11]
+[ext_resource path="res://screens/tutorial_screen/helper.gd" type="Script" id=12]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "tutorial_01"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogue/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogue/Button:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Skip", "Next" ]
+}
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Panel
+onready var t = $Tween
+func start():
+	t.interpolate_property(self, \"rect_position\", get_position(), Vector2(190, 45),
+		1.0, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
+	t.interpolate_property(self, \"rect_size\", get_size(), Vector2(651, 110),
+		1.0, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
+	t.start()
+	yield(t, \"tween_completed\")
+	$\"../Animator\".play(\"tutorial_01\")
+	$Button.show()
+	$Button.grab_focus()"
+
+[node name="Tutorial" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+next_scene = "res://levels/level_01/level_01.tscn"
+
+[node name="Animator" parent="." index="0"]
+
+anims/tutorial_01 = SubResource( 1 )
+
+[node name="ColorRect" parent="Transition" index="0"]
+
+margin_left = 0.0
+margin_right = 1280.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="Environment" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+editor/display_folded = true
+position = Vector2( 0, -72 )
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1024, 0 )
+_sections_unfolded = [ "Motion" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="background" type="Sprite" parent="ParallaxBackground/Environment" index="0"]
+
+self_modulate = Color( 0.925781, 0.925781, 0.925781, 1 )
+position = Vector2( 0, -280 )
+z_index = -10
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
+
+[node name="tree_01" type="Sprite" parent="ParallaxBackground/Environment" index="1"]
+
+position = Vector2( 1720, 367 )
+texture = ExtResource( 4 )
+
+[node name="tree_02" type="Sprite" parent="ParallaxBackground/Environment" index="2"]
+
+position = Vector2( 10, 352 )
+texture = ExtResource( 4 )
+
+[node name="tree_03" type="Sprite" parent="ParallaxBackground/Environment" index="3"]
+
+self_modulate = Color( 0.871094, 0.871094, 0.871094, 1 )
+position = Vector2( 130, 380 )
+scale = Vector2( 0.820313, 0.820313 )
+z_index = -1
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="tree_04" type="Sprite" parent="ParallaxBackground/Environment" index="4"]
+
+self_modulate = Color( 0.824219, 0.824219, 0.824219, 1 )
+position = Vector2( 770, 453 )
+scale = Vector2( 0.664063, 0.664063 )
+z_index = -1
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="foliage_08" type="Sprite" parent="ParallaxBackground/Environment" index="5"]
+
+position = Vector2( 80, 480 )
+texture = ExtResource( 5 )
+
+[node name="foliage_00" type="Sprite" parent="ParallaxBackground/Environment" index="6"]
+
+position = Vector2( 240, 572 )
+scale = Vector2( 0.625, 0.625 )
+texture = ExtResource( 6 )
+
+[node name="rock_00" type="Sprite" parent="ParallaxBackground/Environment" index="7"]
+
+position = Vector2( 1420, 480 )
+texture = ExtResource( 7 )
+
+[node name="foliage_09" type="Sprite" parent="ParallaxBackground/Environment" index="8"]
+
+position = Vector2( 1600, 480 )
+texture = ExtResource( 5 )
+
+[node name="foliage_01" type="Sprite" parent="ParallaxBackground/Environment" index="9"]
+
+position = Vector2( 1330, 560 )
+scale = Vector2( 0.625, 0.625 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="TileMap" type="TileMap" parent="ParallaxBackground/Environment" index="10"]
+
+position = Vector2( 0, -32 )
+mode = 0
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 393216, 3, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="Bard" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 345.5, 537.5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Body" type="Sprite" parent="Bard" index="0"]
+
+position = Vector2( 0, -28 )
+rotation = -0.00526074
+texture = ExtResource( 10 )
+offset = Vector2( 0, -28 )
+region_enabled = true
+region_rect = Rect2( 201, 98, 48, 70 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Head" type="Sprite" parent="Bard/Body" index="0"]
+
+show_behind_parent = true
+position = Vector2( 2, -54 )
+z_index = -1
+texture = ExtResource( 10 )
+offset = Vector2( -12, -38 )
+region_enabled = true
+region_rect = Rect2( 178, 173, 76, 85 )
+_sections_unfolded = [ "Region", "Visibility", "Z Index" ]
+
+[node name="Arm_L" type="Sprite" parent="Bard/Body" index="1"]
+
+position = Vector2( 13.5, -44 )
+rotation = -0.416584
+z_index = -1
+texture = ExtResource( 10 )
+offset = Vector2( 0, 18 )
+region_enabled = true
+region_rect = Rect2( 134, 204, 20, 47 )
+_sections_unfolded = [ "Region", "Z Index" ]
+
+[node name="Flute" type="Sprite" parent="Bard/Body/Arm_L" index="0"]
+
+visible = false
+position = Vector2( -0.0829277, 31.6508 )
+rotation = 1.44688
+texture = ExtResource( 10 )
+offset = Vector2( -2, -32 )
+region_enabled = true
+region_rect = Rect2( 217, 6, 12, 69 )
+_sections_unfolded = [ "Region", "Z Index" ]
+
+[node name="Arm_R" type="Sprite" parent="Bard/Body" index="2"]
+
+position = Vector2( -14, -46.5 )
+rotation = 0.362102
+texture = ExtResource( 10 )
+offset = Vector2( 0, 20 )
+region_enabled = true
+region_rect = Rect2( 108, 204, 20, 47 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Tail" type="Sprite" parent="Bard/Body" index="3"]
+
+position = Vector2( -10, -12 )
+z_index = -2
+texture = ExtResource( 10 )
+offset = Vector2( -28, -4 )
+region_enabled = true
+region_rect = Rect2( 6, 204, 58, 49 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="Leg_L" type="Sprite" parent="Bard" index="1"]
+
+position = Vector2( 12, -40 )
+z_index = -1
+texture = ExtResource( 10 )
+offset = Vector2( 0, 18 )
+region_enabled = true
+region_rect = Rect2( 134, 205, 20, 47 )
+_sections_unfolded = [ "Region", "Z Index" ]
+
+[node name="Leg_R" type="Sprite" parent="Bard" index="2"]
+
+position = Vector2( -10, -42 )
+z_index = -1
+texture = ExtResource( 10 )
+offset = Vector2( 0, 20 )
+region_enabled = true
+region_rect = Rect2( 108, 204, 20, 47 )
+_sections_unfolded = [ "Region", "Z Index" ]
+
+[node name="Helper" parent="." index="4" instance=ExtResource( 11 )]
+
+editor/display_folded = true
+position = Vector2( -497, 274 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Dialogue" type="Panel" parent="." index="5"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 143.0
+margin_top = 25.0
+margin_right = 849.0
+margin_bottom = 135.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = SubResource( 2 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Tween" type="Tween" parent="Dialogue" index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Label" type="Label" parent="Dialogue" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -13.0
+margin_top = 9.0
+margin_right = 669.0
+margin_bottom = 101.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Heyo, this fox over there is Fux. He aways wanted to be a bard."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 0.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button" type="Button" parent="Dialogue" index="2"]
+
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -135.0
+margin_top = 13.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Next"
+flat = false
+align = 1
+
+[connection signal="transition_finished" from="." to="Dialogue" method="start"]
+
+[connection signal="button_up" from="Dialogue/Button" to="." method="_on_next_up"]
+
+
+[editable path="Helper"]

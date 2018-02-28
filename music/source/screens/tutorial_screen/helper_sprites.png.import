@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite_sheet.png-6eb0dbb56187739e9aa7be61f430f2a9.stex"
+path="res://.import/helper_sprites.png-7898ddf0b4584b27b0fbe67493e51e29.stex"
 
 [deps]
 
-source_file="res://actors/player/bard/sprite_sheet.png"
-source_md5="2c7e7ecbd2437b9a40ff20937a6331fc"
+source_file="res://screens/tutorial_screen/helper_sprites.png"
+source_md5="c96a4352b3c628ce2bd80ba20e0aa994"
 
-dest_files=[ "res://.import/sprite_sheet.png-6eb0dbb56187739e9aa7be61f430f2a9.stex" ]
-dest_md5="6fb1068bb3470653b35448e40acf136a"
+dest_files=[ "res://.import/helper_sprites.png-7898ddf0b4584b27b0fbe67493e51e29.stex" ]
+dest_md5="08d3bc936b67e59e70e0b24f06a9da1d"
 
 [params]
 
