@@ -3,9 +3,26 @@ extends Node2D
 onready var t = $Tween
 
 func tutorial(part):
-	if part == 01:
+	if part == 1:
 		part_01()
 	
 func part_01():
-#	t.interpolate_property(
-	pass
+	t.interpolate_property(self, "position", get_position(), Vector2(305, 360), 
+		2.0, Tween.TRANS_BACK, Tween.EASE_OUT)
+	t.start()
+	yield(t, "tween_completed")
+	t.interpolate_property($Arm/OKHand, "rotation_degrees", 0, -14,
+		0.5, Tween.TRANS_BACK, Tween.EASE_IN_OUT)
+	t.start()
+	yield(t, "tween_completed")
+	t.interpolate_property($Arm/OKHand, "rotation_degrees", -14, 14,
+		1.0, Tween.TRANS_BACK, Tween.EASE_IN_OUT)
+	t.start()
+	yield(t, "tween_completed")
+	$Arm/OKHand/hat.hide()
+	$"../Bard/Body/Head".set_region_rect(Rect2(9, 3, 83, 89))
+	t.interpolate_property(self, "position", get_position(), Vector2(-70, 360), 
+		2.0, Tween.TRANS_BACK, Tween.EASE_IN)
+	t.start()
+	yield(t, "tween_completed")
+	$"../Animator".play("tutorial_02")
