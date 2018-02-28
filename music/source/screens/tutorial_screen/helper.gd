@@ -7,7 +7,7 @@ func tutorial(part):
 		part_01()
 	
 func part_01():
-	t.interpolate_property(self, "position", get_position(), Vector2(305, 360), 
+	t.interpolate_property(self, "position", get_position(), Vector2(309, 370), 
 		2.0, Tween.TRANS_BACK, Tween.EASE_OUT)
 	t.start()
 	yield(t, "tween_completed")
@@ -15,14 +15,13 @@ func part_01():
 		0.5, Tween.TRANS_BACK, Tween.EASE_IN_OUT)
 	t.start()
 	yield(t, "tween_completed")
-	t.interpolate_property($Arm/OKHand, "rotation_degrees", -14, 14,
+	t.interpolate_property($Arm/OKHand, "rotation_degrees", -14, 10,
 		1.0, Tween.TRANS_BACK, Tween.EASE_IN_OUT)
 	t.start()
 	yield(t, "tween_completed")
 	$Arm/OKHand/hat.hide()
 	$"../Bard/Body/Head".set_region_rect(Rect2(9, 3, 83, 89))
-	t.interpolate_property(self, "position", get_position(), Vector2(-70, 360), 
+	t.interpolate_property(self, "position", get_position(), Vector2(-80, 370), 
 		2.0, Tween.TRANS_BACK, Tween.EASE_IN)
 	t.start()
 	yield(t, "tween_completed")
-	$"../Animator".play("tutorial_02")

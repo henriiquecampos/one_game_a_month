@@ -13,7 +13,7 @@
 [ext_resource path="res://actors/birds/bird.tscn" type="PackedScene" id=11]
 [ext_resource path="res://screens/main_screen/timer.gd" type="Script" id=12]
 
-[node name="MainScreen" index="0" instance=ExtResource( 1 )]
+[node name="MainScreen" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 next_scene = "res://screens/tutorial_screen/tutorial_screen.tscn"
