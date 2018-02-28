@@ -1429,29 +1429,28 @@ position = Vector2( 0.5, 1.5 )
 [node name="Body" type="Sprite" parent="Sprites" index="0"]
 
 position = Vector2( 0, -28 )
-rotation = -0.127537
+rotation = -0.00526074
 texture = ExtResource( 4 )
 offset = Vector2( 0, -28 )
 region_enabled = true
-region_rect = Rect2( 201, 116, 48, 70 )
+region_rect = Rect2( 201, 98, 48, 70 )
 _sections_unfolded = [ "Region" ]
 
 [node name="Head" type="Sprite" parent="Sprites/Body" index="0"]
 
 show_behind_parent = true
 position = Vector2( 2, -54 )
-rotation = -0.157236
 z_index = -1
 texture = ExtResource( 4 )
 offset = Vector2( -12, -38 )
 region_enabled = true
-region_rect = Rect2( 99, 9, 82, 83 )
+region_rect = Rect2( 9, -1, 83, 91 )
 _sections_unfolded = [ "Region", "Visibility", "Z Index" ]
 
 [node name="Arm_L" type="Sprite" parent="Sprites/Body" index="1"]
 
 position = Vector2( 13.5, -44 )
-rotation = -1.80041
+rotation = -0.416584
 z_index = -1
 texture = ExtResource( 4 )
 offset = Vector2( 0, 18 )
@@ -1461,8 +1460,8 @@ _sections_unfolded = [ "Region", "Z Index" ]
 
 [node name="Flute" type="Sprite" parent="Sprites/Body/Arm_L" index="0"]
 
-position = Vector2( 16.684, 4.07447 )
-rotation = 3.74898
+position = Vector2( -0.0829277, 31.6508 )
+rotation = 1.44688
 texture = ExtResource( 4 )
 offset = Vector2( -2, -32 )
 region_enabled = true
@@ -1472,7 +1471,7 @@ _sections_unfolded = [ "Region", "Z Index" ]
 [node name="Arm_R" type="Sprite" parent="Sprites/Body" index="2"]
 
 position = Vector2( -14, -46.5 )
-rotation = -1.64699
+rotation = 0.362102
 texture = ExtResource( 4 )
 offset = Vector2( 0, 20 )
 region_enabled = true
@@ -1482,7 +1481,6 @@ _sections_unfolded = [ "Region" ]
 [node name="Tail" type="Sprite" parent="Sprites/Body" index="3"]
 
 position = Vector2( -10, -12 )
-rotation = 0.559629
 z_index = -2
 texture = ExtResource( 4 )
 offset = Vector2( -28, -4 )
@@ -1503,7 +1501,6 @@ _sections_unfolded = [ "Region", "Z Index" ]
 [node name="Leg_R" type="Sprite" parent="Sprites" index="2"]
 
 position = Vector2( -10, -42 )
-rotation = 0.232082
 z_index = -1
 texture = ExtResource( 4 )
 offset = Vector2( 0, 20 )
