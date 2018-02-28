@@ -9,6 +9,8 @@ var pitch = 1.0
 var note_duration = 0
 var success = false
 
+func _ready():
+	$Sprite.frame = (sprite_row * 4) + 3
 func sing():
 	$Sprite.frame = (sprite_row * 4) + 2
 	#Find the pitch sound effect then apply the bird's pitch in pitch_scale
@@ -70,7 +72,6 @@ func set_flip_h(value):
 	$Sprite.scale.x = -0.5 if flip_h else 0.5
 
 func set_sprite_row(value):
-	sprite_row = value
 	$Sprite.frame = (sprite_row * 4) + 3
 	#Set the pitch according to the row of being used in the Sprite
 	if value == 0:
@@ -79,3 +80,4 @@ func set_sprite_row(value):
 		pitch = 1.25
 	else:
 		pitch = 1.5
+	sprite_row = value

@@ -28,6 +28,7 @@ func _process(delta):
 		if object != null:
 			check = check_pitch(pitch, object.pitch)
 			if !check:
+				miss()
 				object.miss()
 	if Input.is_action_just_released("interact") and note != null and can_interact:
 		var duration = note.duration
@@ -36,7 +37,7 @@ func _process(delta):
 			if check_duration(duration, object.note_duration) and check:
 				success()
 				object.success()
-			else:
+			elif check:
 				miss()
 				object.miss()
 		else:
@@ -49,11 +50,6 @@ func interact(p):
 	var fx = AudioServer.get_bus_effect(bus, 0)
 	fx.set_pitch_scale(p)
 	$Flute.play()
-	#Verifies if the player's pitch matches the object's pitch
-	#if it does it can then start the duration verification check
-	#based on "res://interface/note_duration/note_duration.gd"
-
-	
 	
 func resume():
 	#Returns the character to it's rest/idle position and re-enable its
@@ -61,8 +57,6 @@ func resume():
 	$Animator.play("rest")
 	$Flute.stop()
 	can_interact = true
-	set_physics_process(true)
-	set_process(true)
 	
 func miss():
 	#Plays a failing animation on both the player and the object he is

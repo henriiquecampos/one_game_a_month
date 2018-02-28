@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tree_01.png-820983cb2c00d46e128dfc4699dbf60f.stex"
+path="res://.import/notes.png-c8b984c0b47469cd24afd4bc482f0d6f.stex"
 
 [deps]
 
-source_file="res://levels/tilesets/tree_01.png"
-source_md5="73a62068f2d172a3708c64398818a0b0"
+source_file="res://screens/main_screen/notes.png"
+source_md5="55566fe929eaf23093c9df2448011518"
 
-dest_files=[ "res://.import/tree_01.png-820983cb2c00d46e128dfc4699dbf60f.stex" ]
-dest_md5="e3592c9f4a106b2e77f49f22809ca6a6"
+dest_files=[ "res://.import/notes.png-c8b984c0b47469cd24afd4bc482f0d6f.stex" ]
+dest_md5="cc0a910e6e7aaec456b7c0fffee1f2bf"
 
 [params]
 

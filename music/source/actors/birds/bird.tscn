@@ -4,7 +4,7 @@
 [ext_resource path="res://actors/birds/bird.gd" type="Script" id=2]
 [ext_resource path="res://actors/birds/birbs.png" type="Texture" id=3]
 [ext_resource path="res://actors/birds/exclamation.png" type="Texture" id=4]
-[ext_resource path="res://actors/birds/flute_c4.tres" type="AudioStream" id=5]
+[ext_resource path="res://actors/birds/piccolo_c5.tres" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -15,7 +15,7 @@ radius = 160.0
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-duration = 1
+duration = 1.0
 sprite_row = 0
 flip_h = false
 
