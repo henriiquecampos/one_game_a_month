@@ -5,7 +5,13 @@ var object = null
 const NOTE = preload("res://interface/note_duration/note.tscn")
 var note = null
 enum KEYS{Z, X, C}
+var key = 0
 var check = false
+
+signal played_note(pitch, duration)
+
+func _ready():
+	connect("played_note", get_tree().get_nodes_in_group("staff")[0], "add_note")
 func _process(delta):
 	#Start the interaction if it can, then check for which pitch the 
 	#player is trying to use in the interaction
@@ -17,12 +23,15 @@ func _process(delta):
 		if Input.is_key_pressed(KEY_Z):
 			note.set_modulate(note.COLORS[Z])
 			pitch = 1.0
+			key = Z
 		elif Input.is_key_pressed(KEY_X):
 			note.set_modulate(note.COLORS[X])
 			pitch = 1.25
+			key = X
 		elif Input.is_key_pressed(KEY_C):
 			note.set_modulate(note.COLORS[C])
 			pitch = 1.50
+			key = C
 		add_child(note)
 		interact(pitch)
 		if object != null:
@@ -31,12 +40,14 @@ func _process(delta):
 				miss()
 				object.miss()
 	if Input.is_action_just_released("interact") and note != null and can_interact:
+		var pitch = key
 		var duration = note.duration
 		note.finished()
 		if object != null:
 			if check_duration(duration, object.note_duration) and check:
 				success()
 				object.success()
+				emit_signal("played_note", pitch, duration)
 			elif check:
 				miss()
 				object.miss()

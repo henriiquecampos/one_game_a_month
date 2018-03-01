@@ -10,15 +10,16 @@ script/source = "extends Node2D
 const COLORS = [Color(\"bc5fd3\"), Color(\"8d5fd3\"), Color(\"37c871\")]
 var duration = 16
 onready var t = $Tween
-signal started()
 func _ready():
 	t.interpolate_property($Sprite, \"scale\", $Sprite.get_scale(), $Sprite.get_scale() + Vector2(0.2, 0.2), 
 		0.5, t.TRANS_BACK, t.EASE_OUT)
 	t.start()
 	yield(t, \"tween_completed\")
 func finished():
+	var staff = get_tree().get_nodes_in_group(\"staff\")[0]
 	$Animator.play(\"finish\")
-	t.interpolate_property(self, \"position\", get_position(), get_position() + Vector2(0, -100), 1.0, t.TRANS_LINEAR, t.EASE_IN)
+	t.interpolate_property(self, \"position\", get_position(), get_position() + Vector2(0, -100),
+		1.0, t.TRANS_LINEAR, t.EASE_IN)
 	t.start()
 	yield(t, \"tween_completed\")
 	queue_free()

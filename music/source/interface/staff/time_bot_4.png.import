@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_low.png-09ce9f13df6dd41952db64028a68d86a.stex"
+path="res://.import/time_bot_4.png-6e791a30b5e260d4ab2a85a99b991269.stex"
 
 [deps]
 
-source_file="res://icon_low.png"
-source_md5="d2cffbbdb711fec6a31e09edc9a124b6"
+source_file="res://interface/staff/time_bot_4.png"
+source_md5="9a15d7e0483d8356daf647d7c4eb9165"
 
-dest_files=[ "res://.import/icon_low.png-09ce9f13df6dd41952db64028a68d86a.stex" ]
-dest_md5="269b009d461a18ec2d6bfeed8e1c5fce"
+dest_files=[ "res://.import/time_bot_4.png-6e791a30b5e260d4ab2a85a99b991269.stex" ]
+dest_md5="3e5f09f87f95c384799c37aa85e927e6"
 
 [params]
 
