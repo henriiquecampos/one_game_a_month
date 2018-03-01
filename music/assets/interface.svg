@@ -25,8 +25,8 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="-2155.8488"
-     inkscape:cy="1560.9203"
+     inkscape:cx="-2123.5239"
+     inkscape:cy="1510.4126"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -263,11 +263,6 @@
          id="path5304"
          inkscape:connector-curvature="0" />
     </g>
-    <path
-       style="opacity:1;fill:#c9c9c9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:10.58333302;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:68.78569794;stroke-opacity:1;paint-order:stroke fill markers"
-       d="m -581.70537,-60.266184 h 44.38059 c 6.13367,0 11.07161,4.93794 11.07161,11.07161 v 44.3805858 c 0,6.13367 -4.93794,11.071612 -11.07161,11.071612 h -44.38059 c -6.13367,0 -11.07161,-4.937942 -11.07161,-11.071612 V -49.194574 c 0,-6.13367 4.93794,-11.07161 11.07161,-11.07161 z"
-       id="path5646"
-       inkscape:connector-curvature="0" />
     <rect
        style="opacity:1;fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:10.58333302;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:68.78569794;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect5648"
@@ -302,16 +297,5 @@
          x="-679.22058"
          y="-82.336349"
          style="fill:#333333;stroke-width:1.15334499">c</tspan></text>
-    <text
-       id="text5656"
-       y="-6.3560205"
-       x="-575.19269"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:58.20238113px;line-height:1.25;font-family:'Garoa Hacker Clube';-inkscape-font-specification:'Garoa Hacker Clube';letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;stroke-width:1.45505953"
-       xml:space="preserve"><tspan
-         style="fill:#333333;stroke-width:1.45505953"
-         y="-6.3560205"
-         x="-575.19269"
-         id="tspan5654"
-         sodipodi:role="line">z</tspan></text>
   </g>
 </svg>
