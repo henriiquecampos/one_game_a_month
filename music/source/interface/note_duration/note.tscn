@@ -68,8 +68,10 @@ tracks/0/keys = {
 [node name="Note" type="Node2D"]
 
 position = Vector2( -32, -32 )
+z_index = 3
+z_as_relative = false
 script = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Animator" type="AnimationPlayer" parent="." index="0"]
 

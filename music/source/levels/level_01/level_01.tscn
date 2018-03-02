@@ -80,7 +80,6 @@ position = Vector2( 7320, -32 )
 
 [node name="Enviroment" parent="." index="2"]
 
-editor/display_folded = true
 z_index = -2
 _sections_unfolded = [ "Z Index" ]
 
@@ -243,6 +242,11 @@ _sections_unfolded = [ "Z Index" ]
 position = Vector2( 7528, 264 )
 texture = ExtResource( 4 )
 
+[node name="foliage_01" type="Sprite" parent="Enviroment" index="25"]
+
+position = Vector2( 7904, 448 )
+texture = ExtResource( 6 )
+
 [node name="Portal" parent="." index="3"]
 
 editor/display_folded = true
@@ -262,14 +266,10 @@ limit_bottom = 1000
 offset_h = -0.2
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Transform" ]
 
-[node name="Screen" parent="." index="5"]
-
-editor/display_folded = true
-
 [node name="GameScreen" parent="Screen" index="0"]
 
 theme = null
-next_scene = "res://screens/main_screen/main_screen.tscn"
+next_scene = "res://levels/level_02/leve_02.tscn"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="6"]
 
