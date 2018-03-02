@@ -8,8 +8,6 @@
 
 config_version=3
 
-mouse=null
-
 [application]
 
 config/name="#1GAM - Music"
@@ -38,5 +36,5 @@ name_num_separator=2
 
 [rendering]
 
-environment/default_clear_color=Color( 0.269531, 0.269531, 0.269531, 1 )
+environment/default_clear_color=Color( 0.815686, 0.956863, 0.968627, 1 )
 environment/default_environment="res://default_env.tres"

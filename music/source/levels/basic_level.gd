@@ -31,3 +31,7 @@ func check_completion():
 		$Player.resume()
 		$Player.set_physics_process(false)
 		$Screen/GameScreen.change_scene()
+
+func _on_void_entered( body ):
+	if body.is_in_group("players"):
+		get_tree().reload_current_scene()

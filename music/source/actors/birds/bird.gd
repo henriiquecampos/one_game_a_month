@@ -17,7 +17,6 @@ func sing():
 	#and plays the audio in the SFX Node
 	var note = load("res://interface/note_duration/note.tscn").instance()
 	add_child(note)
-	note_duration = note.duration
 	note.set_modulate(note.COLORS[sprite_row])
 	var bus = AudioServer.get_bus_index($SFX.get_bus())
 	var fx = AudioServer.get_bus_effect(bus, 0)
@@ -32,6 +31,8 @@ func sing():
 	note.get_node("Animator").stop()
 	note_duration = note.duration
 	note.finished()
+	print(note_duration)
+	print(duration)
 	$SFX.stop()
 	
 func miss():
