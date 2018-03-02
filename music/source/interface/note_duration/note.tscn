@@ -16,7 +16,6 @@ func _ready():
 	t.start()
 	yield(t, \"tween_completed\")
 func finished():
-	var staff = get_tree().get_nodes_in_group(\"staff\")[0]
 	$Animator.play(\"finish\")
 	t.interpolate_property(self, \"position\", get_position(), get_position() + Vector2(0, -100),
 		1.0, t.TRANS_LINEAR, t.EASE_IN)
