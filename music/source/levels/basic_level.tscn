@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://levels/basic_level.gd" type="Script" id=1]
-[ext_resource path="res://screens/game_screen/game_screen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/objectives.gd" type="Script" id=2]
+[ext_resource path="res://screens/game_screen/game_screen.tscn" type="PackedScene" id=3]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -43,6 +44,9 @@ tile_data = PoolIntArray(  )
 
 [node name="Objectives" type="Node2D" parent="." index="1"]
 
+script = ExtResource( 2 )
+count_time = false
+
 [node name="Enviroment" type="Node2D" parent="." index="2"]
 
 [node name="Portal" type="Area2D" parent="." index="3"]
@@ -60,7 +64,7 @@ audio_bus_name = "Master"
 [node name="Camera2D" type="Camera2D" parent="." index="4"]
 
 position = Vector2( 640, 360 )
-offset = Vector2( 0, -128 )
+offset = Vector2( 0, -64 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -77,9 +81,9 @@ smoothing_speed = 5.0
 offset_v = 0.0
 offset_h = 0.0
 drag_margin_left = 0.23
-drag_margin_top = 0.27
+drag_margin_top = 0.0
 drag_margin_right = 0.0
-drag_margin_bottom = 0.2
+drag_margin_bottom = 0.0
 editor_draw_screen = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
@@ -93,7 +97,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="GameScreen" parent="Screen" index="0" instance=ExtResource( 2 )]
+[node name="GameScreen" parent="Screen" index="0" instance=ExtResource( 3 )]
 
 [node name="Boundaries" type="StaticBody2D" parent="." index="6"]
 

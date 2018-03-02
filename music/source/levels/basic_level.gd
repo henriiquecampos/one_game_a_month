@@ -31,6 +31,8 @@ func check_completion():
 		$Player.resume()
 		$Player.set_physics_process(false)
 		$Screen/GameScreen.change_scene()
+	else:
+		$Screen/GameScreen/UI/Staff/Animator.play("miss")
 
 func _on_void_entered( body ):
 	if body.is_in_group("players"):

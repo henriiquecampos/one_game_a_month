@@ -16,6 +16,7 @@ func _process(delta):
 	#Start the interaction if it can, then check for which pitch the 
 	#player is trying to use in the interaction
 	if Input.is_action_just_pressed("interact") and current_state != JUMP and can_interact:
+		can_move = false
 		$Animator.play("flute")
 		var pitch = 0.0
 		note = NOTE.instance()
@@ -40,6 +41,7 @@ func _process(delta):
 				miss()
 				object.miss()
 	if Input.is_action_just_released("interact") and note != null and can_interact:
+		can_move = true
 		var pitch = key
 		var duration = note.duration
 		note.finished()

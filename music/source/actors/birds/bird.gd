@@ -1,7 +1,7 @@
 tool
 extends "res://objects/pickup/pickup.gd"
 
-export (float, 0.25, 2.0, 0.25) var duration = 1.0
+export (float, 0.25, 1.0, 0.25) var duration = 1.0
 onready var info = [pitch, duration]
 export (int, 0, 2) var sprite_row = 0 setget set_sprite_row
 export (bool) var flip_h = false setget set_flip_h
@@ -73,7 +73,7 @@ func set_flip_h(value):
 	$Sprite.scale.x = -0.5 if flip_h else 0.5
 
 func set_sprite_row(value):
-	$Sprite.frame = (sprite_row * 4) + 3
+	$Sprite.frame = (value * 4) + 3
 	#Set the pitch according to the row of being used in the Sprite
 	if value == 0:
 		pitch = 1.0

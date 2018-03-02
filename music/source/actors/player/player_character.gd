@@ -1,6 +1,8 @@
 extends "res://actors/basic_character.gd"
-
+var can_move = true
 func _physics_process(delta):
+	if !can_move:
+		return
 	if Input.is_action_just_pressed("ui_up"):
 		apply_jump()
 	if Input.is_action_just_released("ui_up"):

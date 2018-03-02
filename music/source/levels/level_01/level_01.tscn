@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://levels/basic_level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/tilesets/tileset.tres" type="TileSet" id=2]
@@ -13,24 +13,6 @@
 [ext_resource path="res://levels/tilesets/tree_01.png" type="Texture" id=11]
 [ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=12]
 [ext_resource path="res://actors/player/bard/bard.tscn" type="PackedScene" id=13]
-
-[sub_resource type="GDScript" id=1]
-
-script/source = "tool
-extends Node2D
-
-export var count_time = false setget count_time
-
-func count_time(value):
-	if !Engine.is_editor_hint():
-		return
-	count_time = value
-	
-	if value:
-		var total = 0.0
-		for b in get_children():
-			total += b.duration
-			print(total)"
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -60,9 +42,7 @@ _sections_unfolded = [ "Cell" ]
 [node name="Objectives" parent="." index="1"]
 
 z_index = -1
-script = SubResource( 1 )
 _sections_unfolded = [ "Z Index" ]
-count_time = true
 
 [node name="Birb" parent="Objectives" index="0" instance=ExtResource( 3 )]
 
