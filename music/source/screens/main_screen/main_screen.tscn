@@ -28,6 +28,8 @@ next_scene = "res://screens/tutorial_screen/tutorial_screen.tscn"
 
 [node name="Environment" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="tree_01" type="Sprite" parent="Environment" index="0"]
 
 position = Vector2( 1030, 350 )
@@ -219,6 +221,8 @@ centered = false
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 [connection signal="button_up" from="Start" to="." method="change_scene"]
+
+[connection signal="button_up" from="Credits" to="." method="change_scene" binds= [ "res://screens/credit_screen/credit_screen.tscn" ]]
 
 
 [editable path="Birbs/Birb"]
