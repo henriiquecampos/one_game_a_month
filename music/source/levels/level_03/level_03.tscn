@@ -14,12 +14,12 @@
 [ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=12]
 [ext_resource path="res://actors/player/bard/bard.tscn" type="PackedScene" id=13]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 56, 112 )
 
-[sub_resource type="LineShape2D" id=1]
+[sub_resource type="LineShape2D" id=2]
 
 custom_solver_bias = 0.0
 normal = Vector2( 0, -1 )
@@ -236,7 +236,7 @@ position = Vector2( 6728, -1520 )
 
 [node name="Shape" parent="Portal" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Camera2D" parent="." index="4"]
 
@@ -270,7 +270,7 @@ position = Vector2( 1888, 1282 )
 
 [node name="Shape" parent="Void" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="8"]
 

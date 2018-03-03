@@ -10,8 +10,8 @@ config_version=3
 
 [application]
 
-config/name="#1GAM - Music"
-run/main_scene="res://screens/main_screen/main_screen.tscn"
+config/name="Bard's Lesson"
+run/main_scene="res://screens/splash_screen/splash_screen.tscn"
 config/icon="res://icon.png"
 
 [display]
