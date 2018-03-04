@@ -105,6 +105,10 @@ editor/display_folded = true
 
 position = Vector2( 956, 121 )
 
+[node name="SFX" parent="Birbs/Birb" index="4"]
+
+bus = "Master"
+
 [node name="Rest" type="Timer" parent="Birbs/Birb" index="5"]
 
 process_mode = 1

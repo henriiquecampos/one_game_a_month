@@ -64,7 +64,7 @@ audio_bus_name = "Master"
 [node name="Camera2D" type="Camera2D" parent="." index="4"]
 
 position = Vector2( 640, 360 )
-offset = Vector2( 0, -64 )
+offset = Vector2( 0, -128 )
 anchor_mode = 1
 rotating = false
 current = true

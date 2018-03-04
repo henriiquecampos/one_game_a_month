@@ -63,7 +63,7 @@ volume_db = 0.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
-bus = "Notes"
+bus = "Birbs"
 area_mask = 1
 
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

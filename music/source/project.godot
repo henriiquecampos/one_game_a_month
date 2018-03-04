@@ -14,6 +14,10 @@ config/name="Bard's Lesson"
 run/main_scene="res://screens/splash_screen/splash_screen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+bgm="*res://screens/BGM.tscn"
+
 [display]
 
 window/stretch/mode="2d"
