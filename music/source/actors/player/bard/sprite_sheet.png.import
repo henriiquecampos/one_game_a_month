@@ -7,10 +7,10 @@ path="res://.import/sprite_sheet.png-6eb0dbb56187739e9aa7be61f430f2a9.stex"
 [deps]
 
 source_file="res://actors/player/bard/sprite_sheet.png"
-source_md5="db3b8c2daffd8c6c96a8541ec41ce052"
+source_md5="2c7e7ecbd2437b9a40ff20937a6331fc"
 
 dest_files=[ "res://.import/sprite_sheet.png-6eb0dbb56187739e9aa7be61f430f2a9.stex" ]
-dest_md5="5cced555c90d79a1806a445e60a051cf"
+dest_md5="6fb1068bb3470653b35448e40acf136a"
 
 [params]
 

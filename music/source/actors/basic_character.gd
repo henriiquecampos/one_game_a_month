@@ -18,9 +18,8 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		can_jump = true
-		
-	if !can_jump:
-		if velocity.y >= 10 and !falling:
+	else:
+		if !can_jump and !falling and velocity.y >= 0:
 			falling = true
 			$Animator.play("fall")
 	
@@ -50,13 +49,13 @@ func set_current_state(state):
 	if current_state == state:
 		return
 	if state == IDLE:
-		falling = false
 		$Animator.play("rest")
+		falling = false
 	elif state == WALK:
 		$Animator.play("walk")
+		falling = false
 	elif state == JUMP:
 		$Animator.play("jump")
-		
 	current_state = state
 
 func get_current_state():

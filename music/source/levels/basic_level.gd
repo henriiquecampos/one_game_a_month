@@ -4,6 +4,7 @@ onready var objectives = $Objectives.get_child_count()
 signal score_increased(amount)
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	#Portal is the Node responsible for verifying if the player reached
 	#the end of the level
 	$Portal.connect("body_entered", self, "_portal_body_entered")
@@ -30,3 +31,9 @@ func check_completion():
 		$Player.resume()
 		$Player.set_physics_process(false)
 		$Screen/GameScreen.change_scene()
+	else:
+		$Screen/GameScreen/UI/Staff/Animator.play("miss")
+
+func _on_void_entered( body ):
+	if body.is_in_group("players"):
+		get_tree().reload_current_scene()

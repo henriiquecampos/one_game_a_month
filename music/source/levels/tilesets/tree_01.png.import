@@ -7,10 +7,10 @@ path="res://.import/tree_01.png-820983cb2c00d46e128dfc4699dbf60f.stex"
 [deps]
 
 source_file="res://levels/tilesets/tree_01.png"
-source_md5="6875689f831d68335e5d89616f602a22"
+source_md5="73a62068f2d172a3708c64398818a0b0"
 
 dest_files=[ "res://.import/tree_01.png-820983cb2c00d46e128dfc4699dbf60f.stex" ]
-dest_md5="7a28f6a868ffeecaa5fb78d8ec97e141"
+dest_md5="e3592c9f4a106b2e77f49f22809ca6a6"
 
 [params]
 
