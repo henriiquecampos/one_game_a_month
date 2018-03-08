@@ -11,55 +11,55 @@ var can_move = true
 onready var init_scale = $sprites.get_scale()
 onready var animator = $sprites/animator
 
-enum STATES{IDLE, WALK, JUMP, DUCK}
+enum STATES{IDLE, WALK, JUMP, FALL}
 var current_state = IDLE setget set_current_state, get_current_state
 
-func duck():
-	if is_on_floor():
-		set_current_state(DUCK)
-		can_move = false
+signal state_changed(from, to)
 
 func stand():
 	if is_on_floor():
 		set_current_state(IDLE)
-		can_move = true
 
-func apply_jump():
+func jump(is_released):
+	if is_released:
+		cancel_jump()
+		return
 	if can_jump:
 		set_current_state(JUMP)
 		velocity.y = JUMP_HEIGHT
-		can_jump = false
 		
 func cancel_jump():
 	if !can_jump:
 		if velocity.y <= 0:
 			velocity.y = 0
 
-func walk(direction, speed = MAX_SPEED):
+func walk(is_released, direction, speed = MAX_SPEED):
+	if is_released:
+		velocity.x = 0
+		set_current_state(IDLE)
+		return
 	velocity.x = speed * direction
-	
-	if direction != 0 and can_jump:
+
+	if can_jump:
 		set_current_state(WALK)
-	else:
-		if can_jump:
-			set_current_state(IDLE)
-			pass
-	if direction != 0:
-		$sprites.scale = Vector2(init_scale.x *-1, init_scale.y) if direction < 0 else init_scale
+	
+
+func turn(is_released, direction):
+	$sprites.scale = Vector2(init_scale.x *-1, init_scale.y) if direction < 0 else init_scale
 
 func set_current_state(state):
 	if current_state == state:
 		return
 	if state == IDLE:
-		animator.play("idle")
+		can_jump = true
 		falling = false
 	elif state == WALK:
-		animator.play("punch")
 		falling = false
 	elif state == JUMP:
-		animator.play("jump")
-	elif state == DUCK:
-		animator.play("duck")
+		can_jump = false
+	elif state == FALL:
+		falling = true
+	emit_signal("state_changed", current_state, state)
 	current_state = state
 
 func get_current_state():
@@ -72,9 +72,8 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, UP)
 	
 	if is_on_floor():
-		can_jump = true
+		set_current_state(IDLE)
 	if !can_jump:
 		if !falling and velocity.y >= 0:
-			falling = true
-			animator.play("fall")
+			set_current_state(FALL)
 	
