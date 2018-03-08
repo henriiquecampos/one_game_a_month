@@ -10,11 +10,13 @@ var hit_vector = Vector2(0,0)
 var hurt_vector = Vector2(0,0)
 
 export (NodePath) var input_node
+export (NodePath) var anim_node
 
 func _ready():
 	get_node(input_node).connect("right", self, "punch", [1])
 	get_node(input_node).connect("left", self, "punch", [-1])
 	get_node(input_node).connect("down", self, "duck")
+	get_node(anim_node).connect("animation_finished", self, "_on_animation_finished")
 func punch(is_released, direction):
 	if !is_released:
 		set_current_action(PUNCH)
@@ -41,3 +43,8 @@ func set_target(to):
 	
 func clear_target():
 	target = null
+	
+func _on_animation_finished(anim):
+	print(anim)
+	if anim != "idle":
+		set_current_action(IDLE)

@@ -14,6 +14,3 @@ func _on_physics_state_changed(from, to):
 	
 func _on_action_changed(from, to):
 	play(actions[to])
-	if to != 0:
-		yield(self, "animation_finished")
-		play(actions[0])

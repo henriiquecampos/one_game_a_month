@@ -326,6 +326,7 @@ script = ExtResource( 13 )
 
 script = ExtResource( 14 )
 input_node = NodePath("../input_module")
+anim_node = NodePath("../sprites/animator")
 
 [node name="hit_box" type="Area2D" parent="." index="5"]
 

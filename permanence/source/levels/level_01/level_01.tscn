@@ -31,5 +31,9 @@ _sections_unfolded = [ "Transform" ]
 [node name="player_character" parent="." index="1" instance=ExtResource( 1 )]
 
 position = Vector2( 480, 184 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
 
 
