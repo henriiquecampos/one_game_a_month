@@ -1,6 +1,5 @@
 
-music/assets/fux_the_fox.png
-music/assets/tile.png
+music/assets/
+music/source/.import/
 permanence/assets/
-permanence/.import/
-*.stex
+permanence/source/.import/
