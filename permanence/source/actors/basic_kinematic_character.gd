@@ -3,47 +3,62 @@ extends KinematicBody2D
 enum states {IDLE, WALK, JUMP, FALL}
 var state = IDLE setget set_state, get_state
 
-export (float) var walk_speed = 100.0
+export (int, 0, 500) var walk_speed = 100
+export (int, 0, 1500) var jump_height = 800
 var direction = 1
-const JUMP_HEIGHT = 800
-const GRAVITY = 1000
+var was_walking = false
+var in_jump_speed = walk_speed
+const GRAVITY = 50
+const UP = Vector2(0, -1)
 
 var velocity = Vector2(0, 0)
 func set_state(new_state):
 	if state == new_state:
 		return
+	match new_state:
+		IDLE:
+			velocity = stop()
+			was_walking = false
+		WALK:
+			was_walking = true
+		JUMP:
+			var can_jump = is_on_floor()
+			if can_jump:
+				velocity.y = jump()
+		FALL:
+			pass
 	state = new_state
 	
 func get_state():
 	return(state)
 	
 func jump():
-	return(-JUMP_HEIGHT)
+	return(-jump_height)
 	
 func cancel_jump():
-	pass
+	velocity.y = 0
 	
 func walk(direction, speed):
 	speed = speed * direction
 	return(speed)
 	
 func stop():
-	return(Vector2(0,0))
+	return(Vector2(0, velocity.y))
 	
 func _physics_process(delta):
-	velocity.y += GRAVITY * delta
-	velocity = move_and_slide(velocity)
 	match state:
 		IDLE:
-			stop()
-			return
+			pass
 		WALK:
 			velocity.x = walk(direction, walk_speed)
-			return
 		JUMP:
-			var can_jump = is_on_floor()
-			if can_jump:
-				velocity.y = jump()
-			return
+			if velocity.y > 0:
+				set_state(FALL)
 		FALL:
-			return
+			if is_on_floor():
+				if was_walking:
+					set_state(WALK)
+				else:
+					set_state(IDLE)
+	velocity.y += GRAVITY
+	velocity = move_and_slide(velocity, UP)
