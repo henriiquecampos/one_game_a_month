@@ -1,4 +1,4 @@
-extends "res://actors/basic_kinematic_character.gd"
+extends "res://actors/platform_actors/basic_kinematic_character.gd"
 
 
 func _input(event):

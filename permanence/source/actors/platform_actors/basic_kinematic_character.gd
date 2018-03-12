@@ -8,10 +8,12 @@ export (int, 0, 1500) var jump_height = 800
 var direction = 1
 var was_walking = false
 var in_jump_speed = walk_speed
+
 const GRAVITY = 50
 const UP = Vector2(0, -1)
-
 var velocity = Vector2(0, 0)
+
+signal state_changed(from, to)
 func set_state(new_state):
 	if state == new_state:
 		return
@@ -27,6 +29,7 @@ func set_state(new_state):
 				velocity.y = jump()
 		FALL:
 			pass
+	emit_signal("state_changed", state, new_state)
 	state = new_state
 	
 func get_state():

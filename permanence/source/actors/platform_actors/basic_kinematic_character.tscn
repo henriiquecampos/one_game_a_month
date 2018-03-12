@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://actors/basic_kinematic_character.gd" type="Script" id=1]
+[ext_resource path="res://actors/platform_actors/basic_kinematic_character.gd" type="Script" id=1]
+
 
 [node name="basic_character" type="KinematicBody2D"]
 

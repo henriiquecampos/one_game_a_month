@@ -4,7 +4,6 @@
 [ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=2]
 [ext_resource path="res://actors/fighting_pig/pig.tscn" type="PackedScene" id=3]
 
-
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends Position2D
