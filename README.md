@@ -9,3 +9,14 @@ The core mechanics:
 * player must match a note, with pitch and duration
 * player has to find out where are the birds that sing said notes
 * to complete a level, the player must find out and match every bird's melody
+
+## March theme: Permanence
+
+An arcade action game where the player fights fat food trying in a never ending effort to stay in diet.
+
+The core mechanics:
+
+* player must keep a fatness bar under 100%, the closer to 100% the slower the gameplay
+* player scores by ~~PUNCHING FAT FOOD IN THE FACE~~ avoiding the consume of fat food
+  * if the player succeed in hiting a food he/she scores
+  * is just avoiding, nothing will happen
