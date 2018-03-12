@@ -27,7 +27,7 @@ extents = Vector2( 32, 48 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 64 )
 
-[node name="basic_fighter" type="Area2D" index="0"]
+[node name="basic_fighter" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -39,37 +39,49 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 health = 100
 
-[node name="right_punch" type="CollisionShape2D" parent="." index="0"]
+[node name="right_punch" type="CollisionShape2D" parent="." index="0" groups=[
+"hit",
+]]
 
 position = Vector2( 72, -63.8376 )
 shape = SubResource( 1 )
 disabled = true
 
-[node name="left_punch" type="CollisionShape2D" parent="." index="1"]
+[node name="left_punch" type="CollisionShape2D" parent="." index="1" groups=[
+"hit",
+]]
 
 position = Vector2( -72, -63.8376 )
 shape = SubResource( 1 )
 disabled = true
 
-[node name="upper_punch" type="CollisionShape2D" parent="." index="2"]
+[node name="upper_punch" type="CollisionShape2D" parent="." index="2" groups=[
+"hit",
+]]
 
 position = Vector2( 0, -127.838 )
 shape = SubResource( 2 )
 disabled = true
 
-[node name="sweep" type="CollisionShape2D" parent="." index="3"]
+[node name="sweep" type="CollisionShape2D" parent="." index="3" groups=[
+"hit",
+]]
 
 position = Vector2( 0, -15.8376 )
 shape = SubResource( 3 )
 disabled = true
 
-[node name="duck" type="CollisionShape2D" parent="." index="4"]
+[node name="duck" type="CollisionShape2D" parent="." index="4" groups=[
+"hurt",
+]]
 
 position = Vector2( 0, -47.8376 )
 shape = SubResource( 4 )
 disabled = true
 
-[node name="idle" type="CollisionShape2D" parent="." index="5"]
+[node name="idle" type="CollisionShape2D" parent="." index="5" groups=[
+"hurt",
+]]
 
 position = Vector2( 0, -63.8376 )
 shape = SubResource( 5 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://actors/platform_actors/player_kinematic_character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/fighting_pig/animations/combo_01.tres" type="Animation" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://actors/fighting_pig/animations/rest.tres" type="Animation" id=9]
 [ext_resource path="res://actors/fighting_pig/animations/upper.tres" type="Animation" id=10]
 [ext_resource path="res://actors/fighting_pig/sprite_sheet.png" type="Texture" id=11]
+[ext_resource path="res://actors/fighting_actors/player_fighting_character.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -204,49 +205,6 @@ tracks/14/keys = {
 "values": [ Rect2( 128, 0, 128, 128 ), Rect2( 0, 0, 128, 128 ) ]
 }
 
-[sub_resource type="GDScript" id=3]
-
-script/source = "extends Area2D
-
-func _input(event):
-	if not event is InputEventKey:
-		return
-	
-	if event.is_action_pressed(\"right\"):
-		$right_punch.set_disabled(false)
-	elif event.is_action_released(\"right\"):
-		$right_punch.set_disabled(true)
-		
-	if event.is_action_pressed(\"left\"):
-		$left_punch.set_disabled(false)
-	elif event.is_action_pressed(\"left\"):
-		$left_punch.set_disabled(true)"
-
-[sub_resource type="RectangleShape2D" id=4]
-
-custom_solver_bias = 0.0
-extents = Vector2( 24, 23.8376 )
-
-[sub_resource type="RectangleShape2D" id=5]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 24 )
-
-[sub_resource type="RectangleShape2D" id=6]
-
-custom_solver_bias = 0.0
-extents = Vector2( 64, 16 )
-
-[sub_resource type="RectangleShape2D" id=7]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 48 )
-
-[sub_resource type="RectangleShape2D" id=8]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 64 )
-
 [node name="player_character" instance=ExtResource( 1 )]
 
 position = Vector2( 0, -0.16237 )
@@ -349,64 +307,6 @@ region_rect = Rect2( 208, 160, 48, 96 )
 region_filter_clip = true
 _sections_unfolded = [ "Region", "Z Index" ]
 
-[node name="hit_box" type="Area2D" parent="." index="3"]
-
-editor/display_folded = true
-position = Vector2( 0, -56 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = SubResource( 3 )
-
-[node name="right_punch" type="CollisionShape2D" parent="hit_box" index="0"]
-
-position = Vector2( 72, -7.83763 )
-shape = SubResource( 4 )
-disabled = true
-
-[node name="left_punch" type="CollisionShape2D" parent="hit_box" index="1"]
-
-position = Vector2( -72, -7.83763 )
-shape = SubResource( 4 )
-disabled = true
-
-[node name="upper_punch" type="CollisionShape2D" parent="hit_box" index="2"]
-
-position = Vector2( 0, -71.8376 )
-shape = SubResource( 5 )
-disabled = true
-
-[node name="sweep" type="CollisionShape2D" parent="hit_box" index="3"]
-
-position = Vector2( 0, 40.1624 )
-shape = SubResource( 6 )
-disabled = true
-
-[node name="hurt_box" type="Area2D" parent="." index="4"]
-
-editor/display_folded = true
-position = Vector2( 0, -56 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="duck" type="CollisionShape2D" parent="hurt_box" index="0"]
-
-position = Vector2( 0, 8.16237 )
-shape = SubResource( 7 )
-disabled = true
-
-[node name="idle" type="CollisionShape2D" parent="hurt_box" index="1"]
-
-position = Vector2( 0, -7.83763 )
-shape = SubResource( 8 )
+[node name="player_fighter" parent="." index="3" instance=ExtResource( 12 )]
 
 
