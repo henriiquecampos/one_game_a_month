@@ -18,6 +18,7 @@ func _input(event):
 		IN_AIR:
 			if event.is_action_pressed("up"):
 				$upper_punch.set_disabled(false)
+				set_state(ATTACK)
 			elif event.is_action_pressed("up"):
 				$upper_punch.set_disabled(true)
 				
@@ -34,5 +35,4 @@ func _input(event):
 				set_state(ON_GROUND)
 			elif event.is_action_released("down"):
 				$sweep.set_disabled(true)
-				$idle.set_disabled(false)
 				set_state(ON_GROUND)

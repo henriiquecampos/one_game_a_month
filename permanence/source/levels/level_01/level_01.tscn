@@ -4,8 +4,7 @@
 [ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=2]
 [ext_resource path="res://actors/fighting_pig/pig_fighter.tscn" type="PackedScene" id=3]
 
-
-[node name="level_01" type="Node2D" index="0"]
+[node name="level_01" type="Node2D"]
 
 [node name="tilemap" type="Node2D" parent="." index="0"]
 
@@ -41,5 +40,6 @@ _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 [node name="player_character" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 544, 224 )
+jump_height = 1000
 
 

@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://actors/cutout_animation/pig_character/animations/combo_01.tres" type="Animation" id=1]
-[ext_resource path="res://actors/cutout_animation/pig_character/animations/combo_02.tres" type="Animation" id=2]
-[ext_resource path="res://actors/cutout_animation/pig_character/animations/duck.tres" type="Animation" id=3]
-[ext_resource path="res://actors/cutout_animation/pig_character/animations/fall.tres" type="Animation" id=4]
-[ext_resource path="res://actors/cutout_animation/pig_character/animations/idle.tres" type="Animation" id=5]
-[ext_resource path="res://actors/cutout_animation/pig_character/animations/jump.tres" type="Animation" id=6]
-[ext_resource path="res://actors/cutout_animation/pig_character/animations/punch.tres" type="Animation" id=7]
-[ext_resource path="res://actors/cutout_animation/pig_character/animations/rest.tres" type="Animation" id=8]
-[ext_resource path="res://actors/cutout_animation/pig_character/animations/upper.tres" type="Animation" id=9]
-[ext_resource path="res://actors/fighting_pig/sprite_sheet.png" type="Texture" id=10]
-
+[ext_resource path="res://actors/cutout_animation/pig_character/pig_character.gd" type="Script" id=1]
+[ext_resource path="res://actors/cutout_animation/pig_character/animations/combo_01.tres" type="Animation" id=2]
+[ext_resource path="res://actors/cutout_animation/pig_character/animations/combo_02.tres" type="Animation" id=3]
+[ext_resource path="res://actors/cutout_animation/pig_character/animations/duck.tres" type="Animation" id=4]
+[ext_resource path="res://actors/cutout_animation/pig_character/animations/fall.tres" type="Animation" id=5]
+[ext_resource path="res://actors/cutout_animation/pig_character/animations/idle.tres" type="Animation" id=6]
+[ext_resource path="res://actors/cutout_animation/pig_character/animations/jump.tres" type="Animation" id=7]
+[ext_resource path="res://actors/cutout_animation/pig_character/animations/punch.tres" type="Animation" id=8]
+[ext_resource path="res://actors/cutout_animation/pig_character/animations/rest.tres" type="Animation" id=9]
+[ext_resource path="res://actors/cutout_animation/pig_character/animations/sweep.tres" type="Animation" id=10]
+[ext_resource path="res://actors/cutout_animation/pig_character/animations/upper.tres" type="Animation" id=11]
+[ext_resource path="res://actors/fighting_pig/sprite_sheet.png" type="Texture" id=12]
 
 [sub_resource type="Animation" id=1]
 
@@ -199,9 +200,10 @@ tracks/14/keys = {
 "values": [ Rect2( 128, 0, 128, 128 ), Rect2( 0, 0, 128, 128 ) ]
 }
 
-[node name="cutout_sprites" type="Node2D" index="0"]
+[node name="cutout_character" type="Node2D"]
 
 scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="animator" type="AnimationPlayer" parent="." index="0"]
@@ -211,24 +213,25 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.1
 playback_speed = 1.0
-anims/combo_01 = ExtResource( 1 )
-anims/combo_02 = ExtResource( 2 )
-anims/duck = ExtResource( 3 )
-anims/fall = ExtResource( 4 )
+anims/combo_01 = ExtResource( 2 )
+anims/combo_02 = ExtResource( 3 )
+anims/duck = ExtResource( 4 )
+anims/fall = ExtResource( 5 )
 anims/hurt = SubResource( 1 )
-anims/idle = ExtResource( 5 )
-anims/jump = ExtResource( 6 )
-anims/punch = ExtResource( 7 )
-anims/rest = ExtResource( 8 )
-anims/upper = ExtResource( 9 )
+anims/idle = ExtResource( 6 )
+anims/jump = ExtResource( 7 )
+anims/punch = ExtResource( 8 )
+anims/rest = ExtResource( 9 )
+anims/sweep = ExtResource( 10 )
+anims/upper = ExtResource( 11 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="body" type="Sprite" parent="." index="1"]
 
-editor/display_folded = true
-position = Vector2( 3.5, -47.5 )
-texture = ExtResource( 10 )
+position = Vector2( 3.5, -37 )
+rotation = 0.0958418
+texture = ExtResource( 12 )
 offset = Vector2( 0, -45 )
 region_enabled = true
 region_rect = Rect2( 0, 128, 128, 128 )
@@ -237,10 +240,10 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="hand_right" type="Sprite" parent="body" index="0"]
 
-position = Vector2( -60.5, -46 )
-rotation = 0.6451
+position = Vector2( 35.2942, -139.872 )
+rotation = -0.0556933
 z_index = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 offset = Vector2( 0, -40 )
 region_enabled = true
 region_rect = Rect2( 456, 176, 56, 80 )
@@ -249,10 +252,10 @@ _sections_unfolded = [ "Offset", "Region", "Z Index" ]
 
 [node name="hand_left" type="Sprite" parent="body" index="1"]
 
-position = Vector2( 42, -60 )
-rotation = 0.698844
+position = Vector2( 48.4925, -29.7081 )
+rotation = 0.0687108
 z_index = -1
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 offset = Vector2( 0, -40 )
 region_enabled = true
 region_rect = Rect2( 384, 176, 56, 80 )
@@ -262,7 +265,8 @@ _sections_unfolded = [ "Offset", "Z Index" ]
 [node name="head" type="Sprite" parent="body" index="2"]
 
 position = Vector2( -2, -97 )
-texture = ExtResource( 10 )
+rotation = -0.596829
+texture = ExtResource( 12 )
 offset = Vector2( 0, -40 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 128, 128 )
@@ -271,10 +275,11 @@ _sections_unfolded = [ "Offset", "Region", "Z Index" ]
 
 [node name="leg_right" type="Sprite" parent="." index="2"]
 
-position = Vector2( -23, -69 )
+position = Vector2( 45.5, -68.5 )
+rotation = 0.014473
 scale = Vector2( 0.85, 0.85 )
 z_index = -1
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 offset = Vector2( -2.69413e-05, 33.5294 )
 region_enabled = true
 region_rect = Rect2( 128, 160, 48, 96 )
@@ -282,10 +287,11 @@ region_filter_clip = true
 
 [node name="leg_left" type="Sprite" parent="." index="3"]
 
-position = Vector2( 24.5, -65.5 )
+position = Vector2( -26.5, -47 )
+rotation = 0.133228
 scale = Vector2( 0.85, 0.85 )
 z_index = -1
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 offset = Vector2( 1.76468, 30.5882 )
 region_enabled = true
 region_rect = Rect2( 208, 160, 48, 96 )

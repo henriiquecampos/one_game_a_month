@@ -15,6 +15,12 @@ func hurt(amount):
 	pass
 
 func set_state(new_state):
+	if state == new_state:
+		return
+	match new_state:
+		ON_GROUND:
+			$upper_punch.set_disabled(true)
+			$idle.set_disabled(false)
 	emit_signal("state_changed", state, new_state)
 	state = new_state
 	
