@@ -35,6 +35,8 @@ func _on_fighting_state_changed(from, to):
 					animator.play("sweep")
 					yield(animator, "animation_finished")
 					animator.play("idle")
+				fighter.IN_AIR:
+					animator.play("upper")
 					
 		fighter.ATTACK:
 			match to:
