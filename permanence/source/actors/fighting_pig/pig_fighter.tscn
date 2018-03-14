@@ -24,7 +24,31 @@ shape = SubResource( 1 )
 
 [node name="player_fighter" parent="." index="2" instance=ExtResource( 3 )]
 
+[node name="right_punch" parent="player_fighter" index="0"]
+
+position = Vector2( 56, -63.8376 )
+
+[node name="left_punch" parent="player_fighter" index="1"]
+
+position = Vector2( -56, -63.8376 )
+
 [node name="cutout_sprites" parent="." index="3" instance=ExtResource( 4 )]
+
+[node name="body" parent="cutout_sprites" index="1"]
+
+position = Vector2( 76.5247, -22 )
+
+[node name="head" parent="cutout_sprites/body" index="2"]
+
+region_rect = Rect2( 384, 0, 128, 128 )
+
+[node name="leg_right" parent="cutout_sprites" index="2"]
+
+position = Vector2( 151.312, -24.6117 )
+
+[node name="leg_left" parent="cutout_sprites" index="3"]
+
+position = Vector2( 35.0247, -64 )
 
 [connection signal="state_changed" from="." to="." method="_on_kinematic_state_changed"]
 
@@ -33,3 +57,5 @@ shape = SubResource( 1 )
 [connection signal="state_changed" from="player_fighter" to="." method="_on_fighting_state_changed"]
 
 
+[editable path="player_fighter"]
+[editable path="cutout_sprites"]

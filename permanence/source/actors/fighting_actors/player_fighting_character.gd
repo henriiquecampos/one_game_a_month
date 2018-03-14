@@ -8,6 +8,9 @@ func set_state(new_state):
 			$left_punch.set_disabled(true)
 			$sweep.set_disabled(true)
 			$idle.set_disabled(false)
+			$duck.set_disabled(true)
+		IN_AIR:
+			$duck.set_disabled(true)
 func _input(event):
 	if not event is InputEventKey:
 		return
