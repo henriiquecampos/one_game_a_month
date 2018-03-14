@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://levels/tilesets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=2]
 [ext_resource path="res://actors/fighting_pig/pig_fighter.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/cake/cake.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/cake/cake.tscn" type="PackedScene" id=5]
 
 [node name="level_01" type="Node2D" index="0"]
 
@@ -48,8 +49,24 @@ _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 position = Vector2( 496, 224 )
 jump_height = 1000
 
-[node name="cake" parent="." index="2" instance=ExtResource( 4 )]
+[node name="candies" type="Node2D" parent="." index="2"]
 
-position = Vector2( -80, 416 )
+[node name="spawner" parent="candies" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 0, 480 )
+_sections_unfolded = [ "Transform" ]
+spawn_scene = ExtResource( 5 )
+min_wait_time = 3.0
+max_wait_time = 10.0
+tween_target = Vector2( 0, 92 )
+
+[node name="spawner2" parent="candies" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 1024, 488 )
+_sections_unfolded = [ "Transform" ]
+spawn_scene = ExtResource( 5 )
+min_wait_time = 3.0
+max_wait_time = 10.0
+tween_target = Vector2( 1024, 92 )
 
 

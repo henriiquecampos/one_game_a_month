@@ -12,8 +12,8 @@ extents = Vector2( 32, 16 )
 [node name="cake" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-score = null
-SPEED = 500
+score = 200
+SPEED = 300
 
 [node name="sprite" parent="." index="0"]
 
@@ -29,5 +29,7 @@ disabled = false
 [node name="visibility" type="VisibilityNotifier2D" parent="." index="4"]
 
 rect = Rect2( -32, -16, 64, 37 )
+
+[connection signal="screen_exited" from="visibility" to="." method="queue_free"]
 
 
