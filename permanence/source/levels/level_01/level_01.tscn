@@ -56,8 +56,8 @@ jump_height = 1000
 position = Vector2( 0, 480 )
 _sections_unfolded = [ "Transform" ]
 spawn_scene = ExtResource( 5 )
-min_wait_time = 3.0
-max_wait_time = 10.0
+min_wait_time = 1.0
+max_wait_time = 3.0
 tween_target = Vector2( 0, 92 )
 
 [node name="spawner2" parent="candies" index="1" instance=ExtResource( 4 )]
@@ -65,8 +65,8 @@ tween_target = Vector2( 0, 92 )
 position = Vector2( 1024, 488 )
 _sections_unfolded = [ "Transform" ]
 spawn_scene = ExtResource( 5 )
-min_wait_time = 3.0
-max_wait_time = 10.0
+min_wait_time = 1.0
+max_wait_time = 3.0
 tween_target = Vector2( 1024, 92 )
 
 

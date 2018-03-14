@@ -10,6 +10,8 @@ func _on_kinematic_state_changed(from, to):
 			fighter.set_state(fighter.IN_AIR)
 		FALL:
 			animator.play("fall")
+			fighter.get_node("upper_punch").set_disabled(true)
+			fighter.get_node("idle").set_disabled(false)
 		IDLE:
 			fighter.set_state(fighter.ON_GROUND)
 			animator.play("idle")
@@ -67,13 +69,13 @@ func _on_fighter_shape_entered(area_id, area, area_shape, self_shape):
 			area.get_hit((area.get_global_position() - get_global_position()).normalized())
 		IDLE:
 			animator.play("hurt")
-			area.get_hit((area.get_global_position() - get_global_position()).normalized())
+			area.queue_free()
 			yield(animator, "animation_finished")
 			fighter.set_state(fighter.ON_GROUND)
 			animator.play("idle")
 		DUCK:
 			animator.play("hurt")
-			area.get_hit((area.get_global_position() - get_global_position()).normalized())
+			area.queue_free()
 			yield(animator, "animation_finished")
 			fighter.set_state(fighter.ON_GROUND)
 			animator.play("idle")
