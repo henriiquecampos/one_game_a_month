@@ -229,8 +229,8 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="body" type="Sprite" parent="." index="1"]
 
-position = Vector2( 3.5, -37 )
-rotation = 0.0958418
+position = Vector2( -1.5, -22 )
+rotation = -0.305815
 texture = ExtResource( 12 )
 offset = Vector2( 0, -45 )
 region_enabled = true
@@ -240,8 +240,8 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="hand_right" type="Sprite" parent="body" index="0"]
 
-position = Vector2( 35.2942, -139.872 )
-rotation = -0.0556933
+position = Vector2( -47.3809, -70.6837 )
+rotation = -6.93557
 z_index = 1
 texture = ExtResource( 12 )
 offset = Vector2( 0, -40 )
@@ -252,8 +252,8 @@ _sections_unfolded = [ "Offset", "Region", "Z Index" ]
 
 [node name="hand_left" type="Sprite" parent="body" index="1"]
 
-position = Vector2( 48.4925, -29.7081 )
-rotation = 0.0687108
+position = Vector2( -42.4508, -66.4564 )
+rotation = -2.25597
 z_index = -1
 texture = ExtResource( 12 )
 offset = Vector2( 0, -40 )
@@ -264,8 +264,8 @@ _sections_unfolded = [ "Offset", "Z Index" ]
 
 [node name="head" type="Sprite" parent="body" index="2"]
 
-position = Vector2( -2, -97 )
-rotation = -0.596829
+position = Vector2( -2, -81 )
+rotation = -0.288235
 texture = ExtResource( 12 )
 offset = Vector2( 0, -40 )
 region_enabled = true
@@ -275,8 +275,8 @@ _sections_unfolded = [ "Offset", "Region", "Z Index" ]
 
 [node name="leg_right" type="Sprite" parent="." index="2"]
 
-position = Vector2( 45.5, -68.5 )
-rotation = 0.014473
+position = Vector2( 73.2874, -24.6117 )
+rotation = 1.58061
 scale = Vector2( 0.85, 0.85 )
 z_index = -1
 texture = ExtResource( 12 )
@@ -287,8 +287,7 @@ region_filter_clip = true
 
 [node name="leg_left" type="Sprite" parent="." index="3"]
 
-position = Vector2( -26.5, -47 )
-rotation = 0.133228
+position = Vector2( -43, -64 )
 scale = Vector2( 0.85, 0.85 )
 z_index = -1
 texture = ExtResource( 12 )

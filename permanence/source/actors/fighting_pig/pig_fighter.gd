@@ -10,6 +10,7 @@ func _on_kinematic_state_changed(from, to):
 			animator.play("fall")
 		IDLE:
 			fighter.set_state(fighter.ON_GROUND)
+			animator.play("idle")
 
 func _on_fighting_state_changed(from, to):
 	match from:
@@ -42,3 +43,10 @@ func _on_fighting_state_changed(from, to):
 			match to:
 				fighter.ON_GROUND:
 						animator.play("idle")
+						
+	match to:
+		fighter.ATTACK:
+			yield(animator, "animation_finished")
+			fighter.set_state(fighter.ON_GROUND)
+		fighter.ON_GROUND:
+			animator.play("idle")
