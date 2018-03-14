@@ -1,12 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://levels/tilesets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=2]
-[ext_resource path="res://actors/fighting_pig/pig.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/fighting_pig/pig_fighter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/icecream_bottom.png" type="Texture" id=4]
+[ext_resource path="res://objects/choco_cookie.png" type="Texture" id=5]
+[ext_resource path="res://objects/red_lollipop.png" type="Texture" id=6]
+[ext_resource path="res://objects/choco_topling.png" type="Texture" id=7]
 
 [node name="level_01" type="Node2D" index="0"]
 
 [node name="tilemap" type="Node2D" parent="." index="0"]
+
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="tile_map" type="TileMap" parent="tilemap" index="0"]
 
@@ -39,6 +48,43 @@ _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="player_character" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 544, 224 )
+position = Vector2( 496, 224 )
+jump_height = 1000
+
+[node name="icecream_bottom" type="Sprite" parent="." index="2"]
+
+position = Vector2( 496, 0 )
+rotation = -3.14159
+texture = ExtResource( 4 )
+offset = Vector2( 0, -32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="topling" type="RemoteTransform2D" parent="icecream_bottom" index="0"]
+
+position = Vector2( 0, -88 )
+remote_path = NodePath("../../choco_topling")
+use_global_coordinates = true
+update_position = true
+update_rotation = true
+update_scale = true
+
+[node name="choco_cookie" type="Sprite" parent="." index="3"]
+
+position = Vector2( 336, 424 )
+texture = ExtResource( 5 )
+
+[node name="red_lollipop" type="Sprite" parent="." index="4"]
+
+position = Vector2( 656.007, 518 )
+rotation = -6.02138
+texture = ExtResource( 6 )
+offset = Vector2( 0, -72 )
+
+[node name="choco_topling" type="Sprite" parent="." index="5"]
+
+position = Vector2( 496, 88 )
+rotation = -3.14159
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
 
 

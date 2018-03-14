@@ -7,7 +7,7 @@ export (int, 0, 500) var walk_speed = 100
 export (int, 0, 1500) var jump_height = 800
 var direction = 1
 var was_walking = false
-var in_jump_speed = walk_speed
+onready var in_jump_speed = walk_speed
 
 const GRAVITY = 50
 const UP = Vector2(0, -1)
