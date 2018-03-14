@@ -50,3 +50,9 @@ func _on_fighting_state_changed(from, to):
 			fighter.set_state(fighter.ON_GROUND)
 		fighter.ON_GROUND:
 			animator.play("idle")
+
+func _on_fighter_shape_entered(area_id, area, area_shape, self_shape):
+	if fighter.get_child(self_shape) == $player_fighter/right_punch or \
+		fighter.get_child(self_shape) == $player_fighter/left_punch:
+		area.get_hit()
+			
