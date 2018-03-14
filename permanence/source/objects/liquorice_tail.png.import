@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite.png-76c3ff39eb44b387e7503cc49e8b6509.stex"
+path="res://.import/liquorice_tail.png-f4119a144213d7b176313117d21b28c2.stex"
 
 [deps]
 
-source_file="res://objects/cookie/sprite.png"
-source_md5="ec32988b5cdedf30e4cfddb01303cafc"
+source_file="res://objects/liquorice_tail.png"
+source_md5="aeb3911658d4ad3e2c029c41766f02b1"
 
-dest_files=[ "res://.import/sprite.png-76c3ff39eb44b387e7503cc49e8b6509.stex" ]
-dest_md5="1dab88d6615f26816fc42b012480887d"
+dest_files=[ "res://.import/liquorice_tail.png-f4119a144213d7b176313117d21b28c2.stex" ]
+dest_md5="2580b353928b8b45b290aa76753f3226"
 
 [params]
 
