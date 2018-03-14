@@ -6,6 +6,6 @@
 [node name="player_fighter" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-damage = null
+_sections_unfolded = [ "Transform" ]
 
 

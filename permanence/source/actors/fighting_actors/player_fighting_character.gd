@@ -1,5 +1,13 @@
 extends "res://actors/fighting_actors/basic_fighting_character.gd"
-
+func set_state(new_state):
+	.set_state(new_state)
+	match new_state:
+		ON_GROUND:
+			$upper_punch.set_disabled(true)
+			$right_punch.set_disabled(true)
+			$left_punch.set_disabled(true)
+			$sweep.set_disabled(true)
+			$idle.set_disabled(false)
 func _input(event):
 	if not event is InputEventKey:
 		return
