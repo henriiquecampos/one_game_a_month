@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icecream_bottom.png-d15aa93393f3eba101c3927505580d22.stex"
+path="res://.import/green_lollipop.png-462855cb12864f759551d82a0854622f.stex"
 
 [deps]
 
-source_file="res://objects/icecream_bottom.png"
-source_md5="f2291d465a54dbc6599f88f99574a83a"
+source_file="res://objects/lollipop/green_lollipop.png"
+source_md5="15d22a6acb742e0f4c591cf8bb88453e"
 
-dest_files=[ "res://.import/icecream_bottom.png-d15aa93393f3eba101c3927505580d22.stex" ]
-dest_md5="b2b10eb973f07e9e957f6a452bef9799"
+dest_files=[ "res://.import/green_lollipop.png-462855cb12864f759551d82a0854622f.stex" ]
+dest_md5="9c449eef1d3f928cbf2ea29c75b1e50e"
 
 [params]
 

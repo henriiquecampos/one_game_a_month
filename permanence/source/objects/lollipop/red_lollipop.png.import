@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/choco_cake.png-3b892bc2d0f08f961c55874ec86d21f5.stex"
+path="res://.import/red_lollipop.png-e0e7fc5b451611143227ec255de45a44.stex"
 
 [deps]
 
-source_file="res://objects/choco_cake.png"
-source_md5="b412c0f7c596cd413795f7f6a32adec1"
+source_file="res://objects/lollipop/red_lollipop.png"
+source_md5="2f09414763be0cda4209e655350e179d"
 
-dest_files=[ "res://.import/choco_cake.png-3b892bc2d0f08f961c55874ec86d21f5.stex" ]
-dest_md5="6456b20cc4f652cb6f4751f65ea2e42d"
+dest_files=[ "res://.import/red_lollipop.png-e0e7fc5b451611143227ec255de45a44.stex" ]
+dest_md5="19c59fe8775d7a0dd807769e2acec75a"
 
 [params]
 

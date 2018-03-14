@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red_lollipop.png-d0e236c88670bca5b96a9ad5e9e926d8.stex"
+path="res://.import/strawberry_cake.png-7a87e5ce8ae10b4bd9c786f1c2f88f0c.stex"
 
 [deps]
 
-source_file="res://objects/red_lollipop.png"
-source_md5="2f09414763be0cda4209e655350e179d"
+source_file="res://objects/cake/strawberry_cake.png"
+source_md5="7ab4494f83d4fba8b5f4586ee235fa7d"
 
-dest_files=[ "res://.import/red_lollipop.png-d0e236c88670bca5b96a9ad5e9e926d8.stex" ]
-dest_md5="19c59fe8775d7a0dd807769e2acec75a"
+dest_files=[ "res://.import/strawberry_cake.png-7a87e5ce8ae10b4bd9c786f1c2f88f0c.stex" ]
+dest_md5="53325c62d17dbb31fc0f2fe28775714f"
 
 [params]
 
