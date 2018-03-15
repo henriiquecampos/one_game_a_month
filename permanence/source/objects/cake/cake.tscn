@@ -1,35 +1,29 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://objects/basic_candy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/flying_candy/flying_candy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/cake/cake.gd" type="Script" id=2]
 [ext_resource path="res://objects/cake/choco_cake.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 16 )
+extents = Vector2( 32, 20 )
 
 [node name="cake" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-score = 200
 SPEED = 300
 
 [node name="sprite" parent="." index="0"]
 
-rotation = 6.28319
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="shape" parent="." index="1"]
 
 shape = SubResource( 1 )
-disabled = false
 
-[node name="visibility" type="VisibilityNotifier2D" parent="." index="4"]
+[node name="visibility" parent="." index="4"]
 
-rect = Rect2( -32, -16, 64, 37 )
-
-[connection signal="screen_exited" from="visibility" to="." method="queue_free"]
+rect = Rect2( -32, -18, 64, 37 )
 
 
