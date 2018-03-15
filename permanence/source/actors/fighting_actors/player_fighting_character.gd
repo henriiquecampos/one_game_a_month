@@ -12,8 +12,8 @@ func set_state(new_state):
 		IN_AIR:
 			$duck.set_disabled(true)
 func _input(event):
-	if not event is InputEventKey:
-		return
+#	if not event is InputEventKey:
+#		return
 	match state:
 		ON_GROUND:
 			if event.is_action_pressed("right"):

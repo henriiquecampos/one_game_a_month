@@ -2,8 +2,6 @@ extends "res://actors/platform_actors/basic_kinematic_character.gd"
 
 
 func _input(event):
-	if not event is InputEventKey:
-		return
 	
 	if event.is_action_pressed("jump"):
 		set_state(JUMP)

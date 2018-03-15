@@ -2,7 +2,7 @@
 
 [ext_resource path="res://objects/basic_candy.gd" type="Script" id=1]
 
-[node name="candy" type="Area2D" index="0" groups=[
+[node name="candy" type="Area2D" groups=[
 "candy",
 ]]
 

@@ -1,12 +1,41 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://levels/tilesets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=2]
-[ext_resource path="res://actors/fighting_pig/pig_fighter.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/cake/cake.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/cookie/cookie.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/lollipop/lollipop.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/cake/cake.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/cookie/cookie.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/lollipop/lollipop.tscn" type="PackedScene" id=6]
+[ext_resource path="res://actors/fighting_pig/pig_fighter.tscn" type="PackedScene" id=7]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Camera2D
+
+var magnitude = 1.0
+var time_spam = 0
+var is_shaking = false
+onready var initial_pos = get_position()
+func shake(new_mag, new_spam):
+	if magnitude > new_mag:
+		return
+	magnitude = new_mag
+	time_spam = new_spam
+	
+	if is_shaking:
+		return
+	is_shaking = true
+	
+	while time_spam > 0:
+		var shake = Vector2()
+		shake.x = rand_range(-magnitude, magnitude)
+		shake.y = rand_range(-magnitude, magnitude)
+		
+		set_position(shake)
+		time_spam -= get_process_delta_time()
+		yield(get_tree(), \"idle_frame\")
+	set_position(initial_pos)
+	is_shaking = false"
 
 [node name="level_01" type="Node2D" index="0"]
 
@@ -46,55 +75,82 @@ texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="player_character" parent="." index="1" instance=ExtResource( 3 )]
+[node name="candies" type="Node2D" parent="." index="1"]
 
-position = Vector2( 496, 512 )
-jump_height = 1000
-
-[node name="candies" type="Node2D" parent="." index="2"]
-
-[node name="cake_spawn" parent="candies" index="0" instance=ExtResource( 4 )]
+[node name="cake_spawn" parent="candies" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 0, 480 )
 _sections_unfolded = [ "Transform" ]
-spawn_scene = ExtResource( 5 )
+spawn_scene = ExtResource( 4 )
 min_wait_time = 5.0
 max_wait_time = 7.0
 tween_target = Vector2( 0, 92 )
 
-[node name="cake_spawn2" parent="candies" index="1" instance=ExtResource( 4 )]
+[node name="cake_spawn2" parent="candies" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 1024, 488 )
 _sections_unfolded = [ "Transform" ]
-spawn_scene = ExtResource( 5 )
+spawn_scene = ExtResource( 4 )
 min_wait_time = 5.0
 max_wait_time = 7.0
 tween_target = Vector2( 1024, 92 )
 
-[node name="cookie_spawn" parent="candies" index="2" instance=ExtResource( 4 )]
+[node name="cookie_spawn" parent="candies" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 1024, 288 )
 _sections_unfolded = [ "Transform" ]
-spawn_scene = ExtResource( 6 )
+spawn_scene = ExtResource( 5 )
 min_wait_time = 8.0
 max_wait_time = 12.0
 tween_target = Vector2( 1024, 0 )
 
-[node name="cookie_spawn2" parent="candies" index="3" instance=ExtResource( 4 )]
+[node name="cookie_spawn2" parent="candies" index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 0, 288 )
 _sections_unfolded = [ "Transform", "Visibility" ]
-spawn_scene = ExtResource( 6 )
+spawn_scene = ExtResource( 5 )
 min_wait_time = 8.0
 max_wait_time = 12.0
 
-[node name="lollipop" parent="candies" index="4" instance=ExtResource( 4 )]
+[node name="lollipop" parent="candies" index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 670, 512 )
 _sections_unfolded = [ "Transform", "Visibility" ]
-spawn_scene = ExtResource( 7 )
+spawn_scene = ExtResource( 6 )
 min_wait_time = 10.0
 max_wait_time = 15.0
 tween_target = Vector2( 670, 512 )
+
+[node name="camera" type="Camera2D" parent="." index="2"]
+
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -30
+limit_top = -30
+limit_right = 1054
+limit_bottom = 630
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = SubResource( 1 )
+_sections_unfolded = [ "Editor", "Limit", "Offset", "Transform" ]
+
+[node name="player_character" parent="." index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 512, 504 )
+jump_height = 1200
 
 

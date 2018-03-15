@@ -57,14 +57,13 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Initial Velocity", "Spread" ]
 
-[node name="flying_candy" index="0" instance=ExtResource( 1 )]
+[node name="flying_candy" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 SPEED = 100
 
 [node name="sprite" parent="." index="0"]
 
-rotation = 6.28319
 _sections_unfolded = [ "Transform" ]
 
 [node name="hurt_particles" type="Particles2D" parent="sprite" index="0"]

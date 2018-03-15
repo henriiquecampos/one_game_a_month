@@ -20,6 +20,7 @@ func set_state(new_state):
 	match new_state:
 		HURT:
 			animator.play("hurt")
+			$shape.set_disabled(true)
 	emit_signal("state_changed", state, new_state)
 	state = new_state
 
@@ -28,5 +29,16 @@ func get_state():
 	
 func get_hit(normal):
 	set_state(HURT)
+	shake_camera()
 	yield(animator, "animation_finished")
 	set_state(DEAD)
+	
+func shake_camera():
+	$"../../camera".shake(15, 0.2)
+	Input.start_joy_vibration(0, 1.0, 1.0, 0.2)
+
+func vibrate_joy(which, weak, strong, duration):
+	Input.start_joy_vibration(which, weak, strong, duration)
+	
+func stop_joy_vibration(which):
+	Input.stop_joy_vibration(0)
