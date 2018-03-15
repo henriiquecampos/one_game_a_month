@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/basic_candy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/flying_candy/flying_candy.gd" type="Script" id=2]
+
+[node name="flying_candy" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+SPEED = 100
+
+[node name="sprite" parent="." index="0"]
+
+rotation = 6.28319
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" parent="." index="1"]
+
+disabled = false
+
+[node name="visibility" type="VisibilityNotifier2D" parent="." index="4"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="screen_exited" from="visibility" to="." method="set_state" binds= [ 2 ]]
+
+

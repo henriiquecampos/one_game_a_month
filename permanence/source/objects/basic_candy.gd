@@ -15,7 +15,6 @@ func set_state(new_state):
 		HURT:
 			match new_state:
 				DEAD:
-					print('ded')
 					queue_free()
 					
 	match new_state:
