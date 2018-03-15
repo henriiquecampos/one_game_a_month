@@ -26,5 +26,7 @@ func set_state(new_state):
 func get_state():
 	return(state)
 	
-func get_hit():
+func get_hit(normal):
 	set_state(HURT)
+	yield(animator, "animation_finished")
+	set_state(DEAD)

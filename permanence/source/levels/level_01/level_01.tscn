@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://levels/tilesets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/cake/cake.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/cookie/cookie.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/lollipop/lollipop.tscn" type="PackedScene" id=7]
 
 [node name="level_01" type="Node2D" index="0"]
 
@@ -47,7 +48,7 @@ _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="player_character" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 496, 224 )
+position = Vector2( 496, 512 )
 jump_height = 1000
 
 [node name="candies" type="Node2D" parent="." index="2"]
@@ -57,8 +58,8 @@ jump_height = 1000
 position = Vector2( 0, 480 )
 _sections_unfolded = [ "Transform" ]
 spawn_scene = ExtResource( 5 )
-min_wait_time = 1.0
-max_wait_time = 3.0
+min_wait_time = 5.0
+max_wait_time = 7.0
 tween_target = Vector2( 0, 92 )
 
 [node name="cake_spawn2" parent="candies" index="1" instance=ExtResource( 4 )]
@@ -66,8 +67,8 @@ tween_target = Vector2( 0, 92 )
 position = Vector2( 1024, 488 )
 _sections_unfolded = [ "Transform" ]
 spawn_scene = ExtResource( 5 )
-min_wait_time = 1.0
-max_wait_time = 3.0
+min_wait_time = 5.0
+max_wait_time = 7.0
 tween_target = Vector2( 1024, 92 )
 
 [node name="cookie_spawn" parent="candies" index="2" instance=ExtResource( 4 )]
@@ -82,9 +83,18 @@ tween_target = Vector2( 1024, 0 )
 [node name="cookie_spawn2" parent="candies" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 0, 288 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 spawn_scene = ExtResource( 6 )
 min_wait_time = 8.0
 max_wait_time = 12.0
+
+[node name="lollipop" parent="candies" index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 670, 512 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+spawn_scene = ExtResource( 7 )
+min_wait_time = 10.0
+max_wait_time = 15.0
+tween_target = Vector2( 670, 512 )
 
 
