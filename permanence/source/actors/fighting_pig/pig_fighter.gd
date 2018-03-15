@@ -52,8 +52,10 @@ func _on_fighting_state_changed(from, to):
 						
 	match to:
 		fighter.ATTACK:
-			yield(animator, "animation_finished")
-			fighter.set_state(fighter.ON_GROUND)
+			match from:
+				fighter.ON_GROUND:
+					yield(animator, "animation_finished")
+					fighter.set_state(fighter.ON_GROUND)
 		fighter.ON_GROUND:
 			animator.play("idle")
 
@@ -69,13 +71,15 @@ func _on_fighter_shape_entered(area_id, area, area_shape, self_shape):
 			area.get_hit((area.get_global_position() - get_global_position()).normalized())
 		IDLE:
 			animator.play("hurt")
-			area.queue_free()
+			if !area.animator.is_playing():
+				area.queue_free()
 			yield(animator, "animation_finished")
 			fighter.set_state(fighter.ON_GROUND)
 			animator.play("idle")
 		DUCK:
 			animator.play("hurt")
-			area.queue_free()
+			if !area.animator.is_playing():
+				area.queue_free()
 			yield(animator, "animation_finished")
 			fighter.set_state(fighter.ON_GROUND)
 			animator.play("idle")

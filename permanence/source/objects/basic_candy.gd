@@ -29,13 +29,13 @@ func get_state():
 	
 func get_hit(normal):
 	set_state(HURT)
-	shake_camera()
+	shake_camera(15, 0.2)
+	Input.start_joy_vibration(0, 1.0, 1.0, 0.2)
 	yield(animator, "animation_finished")
 	set_state(DEAD)
 	
-func shake_camera():
-	$"../../camera".shake(15, 0.2)
-	Input.start_joy_vibration(0, 1.0, 1.0, 0.2)
+func shake_camera(magnitude, life_spam):
+	$"../../camera".shake(magnitude,life_spam)
 
 func vibrate_joy(which, weak, strong, duration):
 	Input.start_joy_vibration(which, weak, strong, duration)

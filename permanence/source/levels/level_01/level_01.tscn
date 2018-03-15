@@ -35,6 +35,7 @@ func shake(new_mag, new_spam):
 		time_spam -= get_process_delta_time()
 		yield(get_tree(), \"idle_frame\")
 	set_position(initial_pos)
+	magnitude = 0
 	is_shaking = false"
 
 [node name="level_01" type="Node2D" index="0"]
