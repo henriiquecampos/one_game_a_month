@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/strawberry_cake.png-2285f27bdaa7ba9a9070504e86d346ba.stex"
+path="res://.import/choco_topling.png-f6a95a7d05f16579015c542f9495e93b.stex"
 
 [deps]
 
-source_file="res://objects/strawberry_cake.png"
-source_md5="7ab4494f83d4fba8b5f4586ee235fa7d"
+source_file="res://objects/icrecream/choco_topling.png"
+source_md5="fa700988b696ae77baa9761968764a50"
 
-dest_files=[ "res://.import/strawberry_cake.png-2285f27bdaa7ba9a9070504e86d346ba.stex" ]
-dest_md5="53325c62d17dbb31fc0f2fe28775714f"
+dest_files=[ "res://.import/choco_topling.png-f6a95a7d05f16579015c542f9495e93b.stex" ]
+dest_md5="e7179dd370915ffcd9356862b406cf50"
 
 [params]
 

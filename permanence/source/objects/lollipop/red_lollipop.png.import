@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/choco_topling.png-972adf3dbaea4d2e0ab335d502eaf41d.stex"
+path="res://.import/red_lollipop.png-e0e7fc5b451611143227ec255de45a44.stex"
 
 [deps]
 
-source_file="res://objects/choco_topling.png"
-source_md5="fa700988b696ae77baa9761968764a50"
+source_file="res://objects/lollipop/red_lollipop.png"
+source_md5="2f09414763be0cda4209e655350e179d"
 
-dest_files=[ "res://.import/choco_topling.png-972adf3dbaea4d2e0ab335d502eaf41d.stex" ]
-dest_md5="e7179dd370915ffcd9356862b406cf50"
+dest_files=[ "res://.import/red_lollipop.png-e0e7fc5b451611143227ec255de45a44.stex" ]
+dest_md5="19c59fe8775d7a0dd807769e2acec75a"
 
 [params]
 

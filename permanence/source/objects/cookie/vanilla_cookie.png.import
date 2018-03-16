@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red_lollipop.png-d0e236c88670bca5b96a9ad5e9e926d8.stex"
+path="res://.import/vanilla_cookie.png-25ee8901b1ca95c782c7181b6fcc9fb6.stex"
 
 [deps]
 
-source_file="res://objects/red_lollipop.png"
-source_md5="2f09414763be0cda4209e655350e179d"
+source_file="res://objects/cookie/vanilla_cookie.png"
+source_md5="33f3ebb23a3e47034e85f15cc65792a3"
 
-dest_files=[ "res://.import/red_lollipop.png-d0e236c88670bca5b96a9ad5e9e926d8.stex" ]
-dest_md5="19c59fe8775d7a0dd807769e2acec75a"
+dest_files=[ "res://.import/vanilla_cookie.png-25ee8901b1ca95c782c7181b6fcc9fb6.stex" ]
+dest_md5="da8f8ebf868996a56ecb18138898d816"
 
 [params]
 

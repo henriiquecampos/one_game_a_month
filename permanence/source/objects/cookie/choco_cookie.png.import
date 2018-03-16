@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite.png-76c3ff39eb44b387e7503cc49e8b6509.stex"
+path="res://.import/choco_cookie.png-5c0368a5e06eb8672c74bf0b4ffdc828.stex"
 
 [deps]
 
-source_file="res://objects/cookie/sprite.png"
-source_md5="ec32988b5cdedf30e4cfddb01303cafc"
+source_file="res://objects/cookie/choco_cookie.png"
+source_md5="86be2cbb5c023bc66b6798156625d8b2"
 
-dest_files=[ "res://.import/sprite.png-76c3ff39eb44b387e7503cc49e8b6509.stex" ]
-dest_md5="1dab88d6615f26816fc42b012480887d"
+dest_files=[ "res://.import/choco_cookie.png-5c0368a5e06eb8672c74bf0b4ffdc828.stex" ]
+dest_md5="69ea993c3a3a4d6ee792f2d2a338908c"
 
 [params]
 

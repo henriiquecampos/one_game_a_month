@@ -12,7 +12,7 @@ func change_scene(to = next_scene):
 	get_tree().change_scene(to)
 	
 func apply_transition(mode):
-	var a = $Animator
+	var a = $animator
 	if mode == 0:
 		a.play("transition")
 	else:

@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/spawner/spawner.gd" type="Script" id=1]
+
+[node name="spawner" type="Position2D"]
+
+script = ExtResource( 1 )
+spawn_scene = null
+min_wait_time = 15.0
+max_wait_time = 30.0
+tween_target = Vector2( 0, 0 )
+
+[node name="timer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="tween" type="Tween" parent="." index="1"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+

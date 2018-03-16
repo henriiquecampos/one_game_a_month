@@ -24,4 +24,4 @@ func get_state():
 	return(state)
 
 func _on_area_shape_entered(area_id, area, area_shape, self_shape):
-	print(get_child(self_shape).get_name())
+	pass

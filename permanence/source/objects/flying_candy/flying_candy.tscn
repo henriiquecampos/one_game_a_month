@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://objects/basic_candy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/flying_candy/flying_candy.gd" type="Script" id=2]
+[ext_resource path="res://objects/flying_candy/flying_candy_hurt.tres" type="Animation" id=3]
+
+[sub_resource type="Curve" id=11]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.555754, 0, 0, Vector2( 0.762667, 0 ), -1.85752, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=12]
+
+flags = 4
+width = 32
+curve = SubResource( 11 )
+
+[sub_resource type="ParticlesMaterial" id=13]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 180.0
+flatness = 0.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 180.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 100.0
+damping_random = 1.0
+angle = 0.0
+angle_random = 0.0
+scale = 16.0
+scale_random = 1.0
+scale_curve = SubResource( 12 )
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Initial Velocity", "Spread" ]
+
+[node name="flying_candy" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+SPEED = 100
+
+[node name="sprite" parent="." index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="hurt_particles" type="Particles2D" parent="sprite" index="0"]
+
+emitting = false
+amount = 16
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.95
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 13 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Time", "Transform", "Visibility" ]
+
+[node name="shape" parent="." index="1"]
+
+disabled = false
+
+[node name="animator" parent="." index="2"]
+
+anims/hurt = ExtResource( 3 )
+
+[node name="visibility" type="VisibilityNotifier2D" parent="." index="4"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="screen_exited" from="visibility" to="." method="set_state" binds= [ 2 ]]
+
+

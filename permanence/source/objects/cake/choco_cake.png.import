@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/choco_cake.png-3b892bc2d0f08f961c55874ec86d21f5.stex"
+path="res://.import/choco_cake.png-f3090dcc6bd5a089cd44446804b3c3bc.stex"
 
 [deps]
 
-source_file="res://objects/choco_cake.png"
+source_file="res://objects/cake/choco_cake.png"
 source_md5="b412c0f7c596cd413795f7f6a32adec1"
 
-dest_files=[ "res://.import/choco_cake.png-3b892bc2d0f08f961c55874ec86d21f5.stex" ]
+dest_files=[ "res://.import/choco_cake.png-f3090dcc6bd5a089cd44446804b3c3bc.stex" ]
 dest_md5="6456b20cc4f652cb6f4751f65ea2e42d"
 
 [params]

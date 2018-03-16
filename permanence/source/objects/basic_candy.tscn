@@ -1,6 +1,10 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="candy" type="Area2D"]
+[ext_resource path="res://objects/basic_candy.gd" type="Script" id=1]
+
+[node name="candy" type="Area2D" groups=[
+"candy",
+]]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -9,10 +13,14 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+script = ExtResource( 1 )
+score = null
 
-[node name="shape" type="CollisionShape2D" parent="." index="0"]
+[node name="sprite" type="Sprite" parent="." index="0"]
 
-[node name="sprite" type="Sprite" parent="." index="1"]
+[node name="shape" type="CollisionShape2D" parent="." index="1"]
+
+disabled = true
 
 [node name="animator" type="AnimationPlayer" parent="." index="2"]
 
