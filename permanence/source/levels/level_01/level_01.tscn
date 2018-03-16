@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://levels/tilesets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://objects/lollipop/lollipop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/icrecream/icecream.tscn" type="PackedScene" id=7]
 [ext_resource path="res://actors/fighting_pig/pig_fighter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://screens/game_screen/game_screen.tscn" type="PackedScene" id=9]
 
 [sub_resource type="GDScript" id=1]
 
@@ -43,6 +44,7 @@ func shake(new_mag, new_spam):
 
 [node name="tilemap" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -78,6 +80,8 @@ centered = false
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="candies" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="cake_spawn" parent="candies" index="0" instance=ExtResource( 3 )]
 
@@ -165,5 +169,7 @@ _sections_unfolded = [ "Editor", "Limit", "Offset", "Transform" ]
 
 position = Vector2( 512, 504 )
 jump_height = 1200
+
+[node name="game_screen" parent="." index="4" instance=ExtResource( 9 )]
 
 
