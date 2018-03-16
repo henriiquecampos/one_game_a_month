@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 enum states{ATTACK, HURT, DEAD}
 var state = ATTACK setget set_state, get_state
@@ -35,7 +35,7 @@ func get_hit(normal):
 	set_state(DEAD)
 	
 func shake_camera(magnitude, life_spam):
-	$"../../camera".shake(magnitude,life_spam)
+	get_tree().get_nodes_in_group("camera")[0].shake(magnitude,life_spam)
 
 func vibrate_joy(which, weak, strong, duration):
 	Input.start_joy_vibration(which, weak, strong, duration)

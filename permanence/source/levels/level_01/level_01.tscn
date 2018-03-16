@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/tilesets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://objects/cake/cake.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/cookie/cookie.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/lollipop/lollipop.tscn" type="PackedScene" id=6]
-[ext_resource path="res://actors/fighting_pig/pig_fighter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/icrecream/icecream.tscn" type="PackedScene" id=7]
+[ext_resource path="res://actors/fighting_pig/pig_fighter.tscn" type="PackedScene" id=8]
 
 [sub_resource type="GDScript" id=1]
 
@@ -122,7 +123,18 @@ min_wait_time = 10.0
 max_wait_time = 15.0
 tween_target = Vector2( 670, 512 )
 
-[node name="camera" type="Camera2D" parent="." index="2"]
+[node name="icecream" parent="candies" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 512, 0 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+spawn_scene = ExtResource( 7 )
+min_wait_time = 10.0
+max_wait_time = 15.0
+tween_target = Vector2( 512, 0 )
+
+[node name="camera" type="Camera2D" parent="." index="2" groups=[
+"camera",
+]]
 
 anchor_mode = 0
 rotating = false
@@ -149,7 +161,7 @@ editor_draw_drag_margin = true
 script = SubResource( 1 )
 _sections_unfolded = [ "Editor", "Limit", "Offset", "Transform" ]
 
-[node name="player_character" parent="." index="3" instance=ExtResource( 7 )]
+[node name="player_character" parent="." index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 512, 504 )
 jump_height = 1200

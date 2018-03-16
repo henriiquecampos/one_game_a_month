@@ -1,7 +1,9 @@
 extends "res://objects/flying_candy/flying_candy.gd"
 
-const SPRITES = [preload("res://objects/cake/choco_cake.png"), 
-				preload("res://objects/cake/strawberry_cake.png")]
+const SPRITES = [
+				preload("res://objects/cake/choco_cake.png"), 
+				preload("res://objects/cake/strawberry_cake.png")
+				]
 const COLORS = [Color("917052"), Color("f7c4f1")]
 
 func _ready():
