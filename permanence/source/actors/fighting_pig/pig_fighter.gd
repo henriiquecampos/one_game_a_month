@@ -2,7 +2,7 @@ extends "res://actors/platform_actors/player_character.gd"
 
 onready var animator = $cutout_sprites/animator
 onready var fighter = $player_fighter
-
+var is_jumping = false
 enum shapes{RIGHT_PUNCH, LEFT_PUNCH, UPPER_PUNCH, SWEEP, DUCK, IDLE}
 func _on_kinematic_state_changed(from, to):
 	match to:
@@ -21,8 +21,10 @@ func _on_fighting_state_changed(from, to):
 		fighter.IN_AIR:
 			match to:
 				fighter.ATTACK:
-					animator.play("upper")
-					velocity.y = jump()
+					if is_jumping:
+						animator.play("upper")
+						velocity.y = jump()
+						is_jumping = false
 				fighter.ON_GROUND:
 					animator.play("idle")
 					
@@ -33,6 +35,7 @@ func _on_fighting_state_changed(from, to):
 				fighter.DEFENSE:
 					animator.play("duck")
 				fighter.IN_AIR:
+					is_jumping = true
 					animator.play("jump")
 		fighter.DEFENSE:
 			match to:

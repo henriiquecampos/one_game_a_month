@@ -108,7 +108,7 @@ _sections_unfolded = [ "Transform" ]
 spawn_scene = ExtResource( 5 )
 min_wait_time = 8.0
 max_wait_time = 12.0
-tween_target = Vector2( 1024, 0 )
+tween_target = Vector2( 1024, 200 )
 
 [node name="cookie_spawn2" parent="candies" index="3" instance=ExtResource( 3 )]
 
@@ -117,17 +117,28 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 spawn_scene = ExtResource( 5 )
 min_wait_time = 8.0
 max_wait_time = 12.0
+tween_target = Vector2( 0, 200 )
 
-[node name="lollipop" parent="candies" index="4" instance=ExtResource( 3 )]
+[node name="lollipop_right" parent="candies" index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 670, 512 )
+scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 spawn_scene = ExtResource( 6 )
 min_wait_time = 10.0
 max_wait_time = 15.0
 tween_target = Vector2( 670, 512 )
 
-[node name="icecream" parent="candies" index="5" instance=ExtResource( 3 )]
+[node name="lollipop_left" parent="candies" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 352, 512 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+spawn_scene = ExtResource( 6 )
+min_wait_time = 10.0
+max_wait_time = 15.0
+tween_target = Vector2( 352, 512 )
+
+[node name="icecream" parent="candies" index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 512, 0 )
 _sections_unfolded = [ "Transform", "Visibility" ]

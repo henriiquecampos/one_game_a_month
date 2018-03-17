@@ -7,7 +7,7 @@ const SPRITES = [
 const COLORS = [Color("917052"), Color("f7c4f1")]
 
 func _ready():
-	if get_position().x > get_viewport().size.x/2:
+	if get_position().x > 1024/2:
 		velocity.x *= -1
 	randomize()
 	var index = randi()%SPRITES.size()

@@ -7,7 +7,7 @@ const TOPLINGS = [
 					preload("res://objects/icrecream/strawberry_topling.png"),
 					preload("res://objects/icrecream/vanilla_topling.png")
 				]
-const COLORS = [Color("917052"), Color("f7c4f1"), Color("3c3228")]
+const COLORS = [Color("917052"), Color("f7c4f1"), Color("e6dfc1")]
 onready var animator = $animator
 
 func _ready():
@@ -21,11 +21,6 @@ func _ready():
 	t.set_global_transform($topling.get_global_transform())
 	$topling.hide()
 	get_parent().add_child(t)
-	$animator.play("exit")
-	yield($animator, "animation_finished")
-	queue_free()
-	
-func get_hit(normal):
 	$animator.play("exit")
 	yield($animator, "animation_finished")
 	queue_free()

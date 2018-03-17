@@ -186,6 +186,7 @@ offset = Vector2( 0, -32 )
 
 position = Vector2( 0.0126038, -21 )
 shape = SubResource( 1 )
+disabled = true
 
 [node name="animator" type="AnimationPlayer" parent="." index="2"]
 

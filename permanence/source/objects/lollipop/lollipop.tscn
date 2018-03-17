@@ -1,7 +1,8 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://objects/basic_candy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://objects/lollipop/green_lollipop.png" type="Texture" id=2]
+[ext_resource path="res://objects/lollipop/lollipop.gd" type="Script" id=2]
+[ext_resource path="res://objects/lollipop/green_lollipop.png" type="Texture" id=3]
 
 [sub_resource type="Curve" id=1]
 
@@ -86,7 +87,7 @@ angle_random = 0.0
 scale = 16.0
 scale_random = 1.0
 scale_curve = SubResource( 2 )
-color = Color( 0, 0.815686, 0.341176, 1 )
+color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -100,80 +101,6 @@ _sections_unfolded = [ "Color", "Initial Velocity", "Spread" ]
 
 custom_solver_bias = 0.0
 radius = 32.0
-
-[sub_resource type="Animation" id=6]
-
-resource_name = "attack"
-length = 3.0
-loop = false
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1.5, 1.8 ),
-"transitions": PoolRealArray( 0.25, 11.7145, 0.25, 1 ),
-"update": 0,
-"values": [ 0.0, 39.1461, -84.6472, -74.7523 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("sprite/hit_particles:emitting")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 1.5, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ 10, 1.0 ],
-"method": "shake_camera"
-}, {
-"args": [  ],
-"method": "queue_free"
-} ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("shape:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 1.55 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/4/type = "method"
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 1.5 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ 0, 1.0, 1.0, 1.0 ],
-"method": "vibrate_joy"
-} ]
-}
 
 [sub_resource type="Animation" id=7]
 
@@ -535,12 +462,13 @@ _sections_unfolded = [ "Emission Shape", "Gravity", "Initial Velocity", "Spread"
 [node name="lollipop" instance=ExtResource( 1 )]
 
 z_index = -1
+script = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" parent="." index="0"]
 
 position = Vector2( 0, 8 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 offset = Vector2( 0, -80 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -599,7 +527,6 @@ disabled = false
 [node name="animator" parent="." index="2"]
 
 autoplay = "spawn"
-anims/attack = SubResource( 6 )
 anims/hurt = SubResource( 7 )
 anims/rest = SubResource( 8 )
 anims/spawn = SubResource( 9 )
