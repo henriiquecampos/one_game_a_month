@@ -4,6 +4,8 @@ onready var animator = $cutout_sprites/animator
 onready var fighter = $player_fighter
 var is_jumping = false
 enum shapes{RIGHT_PUNCH, LEFT_PUNCH, UPPER_PUNCH, SWEEP, DUCK, IDLE}
+
+signal scored(amount)
 func _on_kinematic_state_changed(from, to):
 	match to:
 		JUMP:
@@ -65,15 +67,20 @@ func _on_fighting_state_changed(from, to):
 func _on_fighter_shape_entered(area_id, area, area_shape, self_shape):
 	match self_shape:
 		RIGHT_PUNCH:
+			emit_signal("scored", area.score)
 			area.get_hit((area.get_global_position() - get_global_position()).normalized())
 		LEFT_PUNCH:
+			emit_signal("scored", area.score)
 			area.get_hit((area.get_global_position() - get_global_position()).normalized())
 		UPPER_PUNCH:
+			emit_signal("scored", area.score)
 			area.get_hit((area.get_global_position() - get_global_position()).normalized())
 		SWEEP:
+			emit_signal("scored", area.score)
 			area.get_hit((area.get_global_position() - get_global_position()).normalized())
 		IDLE:
 			animator.play("hurt")
+			$health.recover(area.damage)
 			if !area.animator.is_playing():
 				area.queue_free()
 			yield(animator, "animation_finished")
@@ -81,6 +88,7 @@ func _on_fighter_shape_entered(area_id, area, area_shape, self_shape):
 			animator.play("idle")
 		DUCK:
 			animator.play("hurt")
+			$health.recover(area.damage)
 			if !area.animator.is_playing():
 				area.queue_free()
 			yield(animator, "animation_finished")

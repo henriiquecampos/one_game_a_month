@@ -10,6 +10,8 @@ func _ready():
 	var index = randi()%SPRITES.size()
 	$sprite.set_texture(SPRITES[index])
 	$sprite/hurt_particles.set_self_modulate(COLORS[index])
+	candy_color = COLORS[index]
+	
 	if get_position().x > 1024/2:
 		set_scale(Vector2(-get_scale().x, get_scale().y))
 		$animator.add_animation("attack", 

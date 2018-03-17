@@ -19,6 +19,7 @@ func _ready():
 	t.get_node("particles").set_self_modulate(COLORS[index])
 	t.get_node("sprite").set_texture(TOPLINGS[index])
 	t.set_global_transform($topling.get_global_transform())
+	t.get_node("candy").candy_color = COLORS[index]
 	$topling.hide()
 	get_parent().add_child(t)
 	$animator.play("exit")

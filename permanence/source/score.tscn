@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node
+
+var current_score = 0 setget set_score
+
+signal score_changed(to)
+func set_score(value):
+	current_score = value
+	current_score = int(current_score)
+	emit_signal(\"score_changed\", current_score)
+	
+func get_score():
+	return(current_score)"
+
+[node name="score" type="Node"]
+
+script = SubResource( 1 )
+
+

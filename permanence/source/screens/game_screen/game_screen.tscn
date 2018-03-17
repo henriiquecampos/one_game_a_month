@@ -4,7 +4,7 @@
 [ext_resource path="res://screens/theme.tres" type="Theme" id=2]
 [ext_resource path="res://screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 
 size = 40
 use_mipmaps = true
@@ -13,6 +13,10 @@ extra_spacing_top = 10
 font_data = ExtResource( 3 )
 
 [node name="game_screen" instance=ExtResource( 1 )]
+
+[node name="transition" parent="." index="1"]
+
+layer = 2
 
 [node name="color_rect" parent="transition" index="0"]
 
@@ -110,7 +114,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.414063, 0.757385, 1 )
 text = "0000000"
 align = 1

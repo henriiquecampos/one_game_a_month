@@ -13,3 +13,4 @@ func _ready():
 	var index = randi()%SPRITES.size()
 	$sprite.set_texture(SPRITES[index])
 	$sprite/hurt_particles.set_self_modulate(COLORS[index])
+	candy_color = COLORS[index]

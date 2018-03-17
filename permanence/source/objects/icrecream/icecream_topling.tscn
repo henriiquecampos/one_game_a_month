@@ -151,6 +151,8 @@ _sections_unfolded = [ "Drawing", "Process Material", "Time", "Transform", "Visi
 
 [node name="candy" parent="." index="3" instance=ExtResource( 3 )]
 
+score = 200
+
 [node name="shape" parent="candy" index="1"]
 
 shape = SubResource( 5 )
