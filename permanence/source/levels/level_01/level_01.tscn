@@ -208,7 +208,6 @@ visible = true
 
 [node name="progress_bar" parent="game_screen/interface/control" index="0"]
 
-visible = false
 margin_left = 96.0
 margin_top = 40.0
 margin_right = 392.0

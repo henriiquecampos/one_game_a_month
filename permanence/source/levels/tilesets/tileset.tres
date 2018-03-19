@@ -103,12 +103,7 @@ points = PoolVector2Array( 4, 72, 4, 0, 124, 0, 124, 72 )
 3/is_autotile = false
 3/occluder_offset = Vector2( 0, 0 )
 3/navigation_offset = Vector2( 0, 0 )
-3/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"shape": null,
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, -4 )
-} ]
+3/shapes = [  ]
 4/name = "tile_05"
 4/texture = ExtResource( 15 )
 4/tex_offset = Vector2( 0, 0 )

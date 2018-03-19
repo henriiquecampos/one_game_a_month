@@ -12,6 +12,7 @@ extents = Vector2( 32, 20 )
 [node name="cookie" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
+score = 175
 SPEED = 500
 
 [node name="sprite" parent="." index="0"]
@@ -27,7 +28,7 @@ self_modulate = Color( 0.235294, 0.196078, 0.156863, 1 )
 
 shape = SubResource( 1 )
 
-[node name="visibility" parent="." index="4"]
+[node name="visibility" parent="." index="3"]
 
 rect = Rect2( -32, -18, 64, 37 )
 

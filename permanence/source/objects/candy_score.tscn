@@ -29,6 +29,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="candy_score" type="Node2D"]
 
+position = Vector2( 464, 328 )
 z_index = 3
 script = SubResource( 2 )
 _sections_unfolded = [ "Visibility", "Z Index", "custom_fonts" ]

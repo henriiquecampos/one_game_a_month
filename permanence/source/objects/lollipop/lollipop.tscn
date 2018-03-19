@@ -465,10 +465,10 @@ z_index = -1
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 score = 500
+damage = 20
 
 [node name="sprite" parent="." index="0"]
 
-position = Vector2( 0, 8 )
 texture = ExtResource( 3 )
 offset = Vector2( 0, -80 )
 _sections_unfolded = [ "Visibility" ]
@@ -521,9 +521,8 @@ _sections_unfolded = [ "Drawing", "Process Material", "Time", "Visibility" ]
 
 [node name="shape" parent="." index="1"]
 
-position = Vector2( 0, -117 )
+position = Vector2( 0, -125 )
 shape = SubResource( 5 )
-disabled = false
 
 [node name="animator" parent="." index="2"]
 
@@ -534,7 +533,7 @@ anims/spawn = SubResource( 8 )
 
 [node name="spawn_particles" type="Particles2D" parent="." index="3"]
 
-emitting = false
+emitting = true
 amount = 32
 lifetime = 1.0
 one_shot = false

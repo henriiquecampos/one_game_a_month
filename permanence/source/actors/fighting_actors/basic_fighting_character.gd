@@ -1,22 +1,30 @@
 extends Area2D
 
-enum states {ON_GROUND, IN_AIR, ATTACK, DEFENSE}
-var state = ON_GROUND setget set_state, get_state
+enum states {IDLE, STAND, DUCK, IN_AIR}
+var state = STAND setget set_state, get_state
 
 export (int) var damage
 export (float) var health = 100
 
 signal state_changed(from, to)
 
-func apply_damage(damage, to):
-	pass
-	
-func hurt(amount):
-	pass
-
 func set_state(new_state):
 	if state == new_state:
 		return
+	match new_state:
+		IDLE:
+			for s in get_children():
+				s.set_disabled(true)
+			$idle.set_disabled(false)
+		STAND:
+			$idle.set_disabled(false)
+			$duck.set_disabled(true)
+		DUCK:
+			$duck.set_disabled(false)
+			$idle.set_disabled(true)
+		IN_AIR:
+			$idle.set_disabled(false)
+			$duck.set_disabled(true)
 	emit_signal("state_changed", state, new_state)
 	state = new_state
 	
