@@ -18,8 +18,7 @@ func _input(event):
 			
 			if event.is_action_pressed("down"):
 				set_state(DUCK)
-			elif event.is_action_pressed("up"):
-				set_state(IN_AIR)
+
 		DUCK:
 			if event.is_action_pressed("left"):
 				$left_sweep.set_disabled(false)

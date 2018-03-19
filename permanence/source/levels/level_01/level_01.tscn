@@ -7,7 +7,7 @@
 [ext_resource path="res://objects/cookie/cookie.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/lollipop/lollipop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/icrecream/icecream.tscn" type="PackedScene" id=7]
-[ext_resource path="res://actors/fighting_pig/pig_fighter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://actors/fighting_pig/pig_kinematic_fighter.tscn" type="PackedScene" id=8]
 [ext_resource path="res://screens/game_screen/game_screen.tscn" type="PackedScene" id=9]
 
 [sub_resource type="GDScript" id=1]

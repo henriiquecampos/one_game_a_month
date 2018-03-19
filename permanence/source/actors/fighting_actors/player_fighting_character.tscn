@@ -5,7 +5,6 @@
 
 [node name="player_fighter" index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 552, 280 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
