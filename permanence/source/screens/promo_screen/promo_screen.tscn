@@ -34,7 +34,7 @@ func _ready():
 		c.connect(\"button_down\", self, \"darker\", [c])
 		c.connect(\"focus_exited\", self, \"default\", [c])
 		c.connect(\"button_up\", self, \"default\", [c])
-	$Patreon.grab_focus()
+	$\"../Replay\".grab_focus()
 
 func bright(button):
 	button.set_self_modulate(BRIGHT)
@@ -50,13 +50,7 @@ func open_link(link):
 
 [node name="PromoScreen" instance=ExtResource( 1 )]
 
-rect_clip_content = false
-next_scene = "res://screens/main_screen/main_screen.tscn"
-
-[node name="ColorRect" parent="Transition" index="0"]
-
-margin_right = 1280.0
-rect_clip_content = false
+next_scene = "res://levels/level_01/level_01.tscn"
 
 [node name="Background" type="TextureRect" parent="." index="2"]
 
