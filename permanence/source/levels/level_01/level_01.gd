@@ -10,7 +10,8 @@ func _ready():
 	
 func _on_player_health_changed(health):
 	if health >= 100:
-		print("game_over")
+		get_tree().set_pause(true)
+		$game_screen.change_scene()
 
 func _on_player_character_scored(amount):
 	score_node.set_score(score_node.get_score() + amount)

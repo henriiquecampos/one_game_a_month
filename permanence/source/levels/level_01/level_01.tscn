@@ -202,6 +202,15 @@ jump_height = 1200
 
 [node name="game_screen" parent="." index="4" instance=ExtResource( 9 )]
 
+pause_mode = 2
+_sections_unfolded = [ "Pause", "Theme" ]
+next_scene = "res://screens/gameover_screen/gameover_screen.tscn"
+
+[node name="color_rect" parent="game_screen/transition" index="0"]
+
+margin_left = 0.0
+margin_right = 1024.0
+
 [node name="control" parent="game_screen/interface" index="0"]
 
 visible = true
