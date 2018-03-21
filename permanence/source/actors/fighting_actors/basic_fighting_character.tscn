@@ -27,7 +27,7 @@ extents = Vector2( 32, 48 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 64 )
 
-[node name="basic_fighter" type="Area2D"]
+[node name="basic_fighter" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

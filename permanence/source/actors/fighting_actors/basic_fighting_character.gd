@@ -1,6 +1,7 @@
 extends Area2D
 
 enum states {IDLE, STAND, DUCK, IN_AIR}
+enum shapes{RIGHT_PUNCH, LEFT_PUNCH, UPPER_PUNCH, DOWN_KICK, LEFT_SWEEP, RIGHT_SWEEP, DUCK, IDLE}
 var state = STAND setget set_state, get_state
 
 export (int) var damage

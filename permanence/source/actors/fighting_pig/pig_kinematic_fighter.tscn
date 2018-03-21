@@ -5,7 +5,6 @@
 [ext_resource path="res://actors/fighting_actors/player_fighting_character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://actors/cutout_animation/pig_character/pig_character.tscn" type="PackedScene" id=4]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -61,7 +60,6 @@ editor/display_folded = true
 [node name="body" parent="cutout_sprites" index="1"]
 
 position = Vector2( 3.5, -36 )
-rotation = 0.0
 
 [node name="hand_right" parent="cutout_sprites/body" index="0"]
 
@@ -75,22 +73,30 @@ rotation = 1.42068
 
 [node name="head" parent="cutout_sprites/body" index="2"]
 
-position = Vector2( -2, -97 )
 rotation = 0.0
 
-[node name="leg_right" parent="cutout_sprites" index="2"]
+[node name="leg_left" parent="cutout_sprites" index="2"]
+
+position = Vector2( 38.5, -65.5 )
+
+[node name="leg_right" parent="cutout_sprites" index="3"]
 
 position = Vector2( -23, -58.5 )
 rotation = 0.639874
-
-[node name="leg_left" parent="cutout_sprites" index="3"]
-
-position = Vector2( 38.5, -65.5 )
 
 [node name="health" type="Node" parent="." index="4"]
 
 script = SubResource( 2 )
 max_health = 100
+
+[node name="tween" type="Tween" parent="." index="5"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 [connection signal="state_changed" from="." to="." method="_on_kinematic_state_changed"]
 
