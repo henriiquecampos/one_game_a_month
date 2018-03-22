@@ -32,6 +32,7 @@ func get_state():
 	
 func get_hit(normal):
 	set_state(HURT)
+	$sfx.play()
 	spawn_score(candy_color, score, global_position)
 	shake_camera(15, 0.2)
 	Input.start_joy_vibration(0, 1.0, 1.0, 0.2)

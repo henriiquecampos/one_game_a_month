@@ -40,7 +40,7 @@ func shake(new_mag, new_spam):
 	magnitude = 0
 	is_shaking = false"
 
-[node name="level_01" type="Node2D"]
+[node name="level_01" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -205,6 +205,11 @@ jump_height = 1200
 pause_mode = 2
 _sections_unfolded = [ "Pause", "Theme" ]
 next_scene = "res://screens/gameover_screen/gameover_screen.tscn"
+
+[node name="color_rect" parent="game_screen/transition" index="0"]
+
+margin_left = 0.0
+margin_right = 1024.0
 
 [node name="progress_bar" parent="game_screen/interface/control" index="0"]
 

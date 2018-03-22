@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://objects/basic_candy.gd" type="Script" id=1]
+[ext_resource path="res://objects/exploding.ogg" type="AudioStream" id=2]
 
 [node name="candy" type="Area2D" groups=[
 "candy",
@@ -31,5 +32,15 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 blend_times = [  ]
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 2 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "SFX"
+area_mask = 1
 
 

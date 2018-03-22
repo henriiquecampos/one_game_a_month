@@ -2,7 +2,6 @@ extends "res://screens/basic_screen.gd"
 
 func _ready():
 	get_tree().set_pause(false)
-	score_node.highscore = 1
 	score_node.check_highscore()
 	var t = "score: {amount}"
 	$highscore_table/current_score.set_text(t.format({"amount":score_node.get_score()}))

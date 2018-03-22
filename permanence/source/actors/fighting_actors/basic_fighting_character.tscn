@@ -103,6 +103,16 @@ disabled = true
 position = Vector2( 0, -63.8376 )
 shape = SubResource( 5 )
 
+[node name="sfx" type="AudioStreamPlayer2D" parent="." index="8"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "SFX"
+area_mask = 1
+
 [connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
 
 
