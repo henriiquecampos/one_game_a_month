@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite_sheet.png-a0a8001b0f83e91d6256b69446c43021.stex"
+path="res://.import/sprite_sheet.png-8bfa38a3d9dc9a53ebee9767a25c927b.stex"
 
 [deps]
 
-source_file="res://actors/fighting_pig/sprite_sheet.png"
+source_file="res://actors/cutout_animation/pig_character/sprite_sheet.png"
 source_md5="42e33ffbdaae13873384feb18160f539"
 
-dest_files=[ "res://.import/sprite_sheet.png-a0a8001b0f83e91d6256b69446c43021.stex" ]
+dest_files=[ "res://.import/sprite_sheet.png-8bfa38a3d9dc9a53ebee9767a25c927b.stex" ]
 dest_md5="359f7bd45ec2cd423ededf9c8bf8991b"
 
 [params]

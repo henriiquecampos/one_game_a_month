@@ -19,6 +19,6 @@ func _on_player_character_scored(amount):
 func _on_score_changed(to):
 	var s = $game_screen/interface/control/score
 	
-	var text = "score: {amount}"
+	var text = "calories: {amount}"
 
 	s.set_text(text.format({"amount":to}))

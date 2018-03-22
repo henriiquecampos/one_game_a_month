@@ -12,7 +12,7 @@
 [ext_resource path="res://actors/cutout_animation/pig_character/animations/rest.tres" type="Animation" id=10]
 [ext_resource path="res://actors/cutout_animation/pig_character/animations/sweep.tres" type="Animation" id=11]
 [ext_resource path="res://actors/cutout_animation/pig_character/animations/upper.tres" type="Animation" id=12]
-[ext_resource path="res://actors/fighting_pig/sprite_sheet.png" type="Texture" id=13]
+[ext_resource path="res://actors/cutout_animation/pig_character/sprite_sheet.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -201,9 +201,9 @@ tracks/14/keys = {
 "values": [ Rect2( 128, 0, 128, 128 ), Rect2( 0, 0, 128, 128 ) ]
 }
 
-[node name="cutout_character" type="Node2D" index="0"]
+[node name="cutout_character" type="Node2D"]
 
-position = Vector2( 0, -13.7478 )
+position = Vector2( 0, -11.8835 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -232,29 +232,29 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="belly" type="Sprite" parent="." index="1"]
 
-position = Vector2( 3.5, -47.5 )
+position = Vector2( 3.5, -48.0383 )
+rotation = 0.014996
 texture = ExtResource( 13 )
-offset = Vector2( 0, -45 )
+offset = Vector2( -0.123993, -49.8 )
 region_enabled = true
 region_rect = Rect2( 0, 128, 128, 128 )
-region_filter_clip = true
-_sections_unfolded = [ "Offset", "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 
 [node name="body" type="RemoteTransform2D" parent="." index="2"]
 
-position = Vector2( 3.5, -44.2868 )
-rotation = -0.0222471
+position = Vector2( 3.5, -48.0383 )
+rotation = 0.014996
 remote_path = NodePath("../belly")
 use_global_coordinates = true
 update_position = true
 update_rotation = true
 update_scale = true
-_sections_unfolded = [ "Offset", "Region" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Update" ]
 
 [node name="hand_right" type="Sprite" parent="body" index="0"]
 
-position = Vector2( -56.8009, -46.9578 )
-rotation = 0.264735
+position = Vector2( -57.1223, -46.8746 )
+rotation = 0.25993
 z_index = 1
 texture = ExtResource( 13 )
 offset = Vector2( 0, -40 )
@@ -265,15 +265,15 @@ _sections_unfolded = [ "Offset", "Region", "Z Index" ]
 
 [node name="hand_left" type="Sprite" parent="body" index="1"]
 
-position = Vector2( 34.8869, -58.159 )
-rotation = 0.793845
+position = Vector2( 35.5049, -58.3189 )
+rotation = 0.785591
 z_index = -1
 texture = ExtResource( 13 )
 offset = Vector2( 0, -40 )
 region_enabled = true
 region_rect = Rect2( 384, 176, 56, 80 )
 region_filter_clip = true
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="head" type="Sprite" parent="body" index="2"]
 
@@ -283,25 +283,25 @@ offset = Vector2( 0, -40 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 128, 128 )
 region_filter_clip = true
-_sections_unfolded = [ "Offset", "Region", "Z Index" ]
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
 
 [node name="leg_left" type="Sprite" parent="." index="3"]
 
-position = Vector2( 22.1832, -65.8168 )
-rotation = -0.0241301
+position = Vector2( 22.0201, -65.9799 )
+rotation = -0.0120293
 scale = Vector2( 0.85, 0.85 )
 z_index = -1
 texture = ExtResource( 13 )
-offset = Vector2( 1.76468, 30.5882 )
+offset = Vector2( 0, 30 )
 region_enabled = true
 region_rect = Rect2( 208, 160, 48, 96 )
 region_filter_clip = true
-_sections_unfolded = [ "Region", "Z Index" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="leg_right" type="Sprite" parent="." index="4"]
 
-position = Vector2( -18.9655, -68.4505 )
-rotation = -0.0124791
+position = Vector2( -17.6606, -68.9398 )
+rotation = -0.0263549
 scale = Vector2( 0.85, 0.85 )
 z_index = -1
 texture = ExtResource( 13 )
@@ -309,5 +309,6 @@ offset = Vector2( -2.69413e-05, 33.5294 )
 region_enabled = true
 region_rect = Rect2( 128, 160, 48, 96 )
 region_filter_clip = true
+_sections_unfolded = [ "Transform" ]
 
 

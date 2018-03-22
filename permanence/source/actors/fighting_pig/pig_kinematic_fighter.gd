@@ -59,7 +59,6 @@ func _on_player_fighter_attacked(shape):
 				velocity.y = jump()
 		fighter.DOWN_KICK:
 			can_jump = false
-			animator.play("kick")
 			velocity.y = -(jump() * 0.8)
 			animator.play("kick")
 
@@ -85,7 +84,7 @@ func _on_fighter_shape_entered(area_id, area, area_shape, self_shape):
 			area.get_hit((area.get_global_position() - get_global_position()).normalized())
 		fighter.IDLE:
 			animator.play("hurt")
-			tween_hurt(animator.get_current_animation_length())
+#			tween_hurt(animator.get_current_animation_length())
 			$health.recover(area.damage)
 			if !area.animator.is_playing():
 				area.queue_free()
@@ -94,7 +93,7 @@ func _on_fighter_shape_entered(area_id, area, area_shape, self_shape):
 			fighter.set_state(fighter.STAND)
 		fighter.DUCK:
 			animator.play("hurt")
-			tween_hurt(animator.get_current_animation_length())
+#			tween_hurt(animator.get_current_animation_length())
 			$health.recover(area.damage)
 			if !area.animator.is_playing():
 				area.queue_free()
@@ -103,12 +102,12 @@ func _on_fighter_shape_entered(area_id, area, area_shape, self_shape):
 			fighter.set_state(fighter.STAND)
 
 func tween_hurt(duration):
-	var initial = $cutout_sprites.scale
-	$tween.interpolate_property($cutout_sprites, "scale", initial, initial * 1.05,
+	var initial = $cutout_sprites/belly.scale
+	$tween.interpolate_property($cutout_sprites/belly, "scale", initial, initial * 1.2,
 		duration/2, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
 	$tween.start()
 	yield($tween, "tween_completed")
-	var current = $cutout_sprites.scale
-	$tween.interpolate_property($cutout_sprites, "scale", current, initial,
+	var current = $cutout_sprites/belly.scale
+	$tween.interpolate_property($cutout_sprites/belly, "scale", current, initial,
 		duration/2, Tween.TRANS_QUINT, Tween.EASE_IN)
-	
+	yield($tween, "tween_completed")
