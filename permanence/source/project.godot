@@ -11,16 +11,25 @@ config_version=3
 [application]
 
 config/name="Permanence"
+run/main_scene="res://levels/level_01/level_01.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 score_node="*res://score.tscn"
+bgm="*res://background_music.tscn"
 
 [display]
 
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"
+
+[importer_defaults]
+
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
+}
 
 [input]
 

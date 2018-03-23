@@ -196,7 +196,6 @@ _sections_unfolded = [ "Editor", "Limit", "Offset", "Transform" ]
 
 [node name="player_character" parent="." index="3" instance=ExtResource( 8 )]
 
-editor/display_folded = true
 position = Vector2( 512, 504 )
 jump_height = 1200
 

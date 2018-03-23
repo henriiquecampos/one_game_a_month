@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=2]
+[gd_resource type="AudioBusLayout" load_steps=4 format=2]
 
 [sub_resource type="AudioEffectReverb" id=1]
 
@@ -12,7 +12,18 @@ hipass = 0.0
 dry = 0.95
 wet = 0.05
 
-[sub_resource type="AudioEffectPitchShift" id=2]
+[sub_resource type="AudioEffectCompressor" id=2]
+
+resource_name = "Compressor"
+threshold = -4.0
+ratio = 4.0
+gain = 4.0
+attack_us = 20.0
+release_ms = 250.0
+mix = 1.0
+sidechain = ""
+
+[sub_resource type="AudioEffectPitchShift" id=3]
 
 resource_name = "PitchShift"
 pitch_scale = 1.0
@@ -33,7 +44,7 @@ bus/1/volume_db = 0.0
 bus/1/send = "Master"
 bus/1/effect/0/effect = SubResource( 1 )
 bus/1/effect/0/enabled = true
-bus/2/name = "player"
+bus/2/name = "BGM"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
@@ -41,4 +52,12 @@ bus/2/volume_db = 0.0
 bus/2/send = "Master"
 bus/2/effect/0/effect = SubResource( 2 )
 bus/2/effect/0/enabled = true
+bus/3/name = "player"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = "Master"
+bus/3/effect/0/effect = SubResource( 3 )
+bus/3/effect/0/enabled = true
 

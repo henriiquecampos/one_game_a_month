@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/8_lollipophurt.ogg-d4c2ecf6e5427101d94499728f48da0b.oggstr"
+
+[deps]
+
+source_file="res://objects/lollipop/8_lollipophurt.ogg"
+source_md5="d59662b6dc7200c49866671f0def6d0c"
+
+dest_files=[ "res://.import/8_lollipophurt.ogg-d4c2ecf6e5427101d94499728f48da0b.oggstr" ]
+dest_md5="b46b3da1859384845f49b06f92fc5aee"
+
+[params]
+
+loop=false
+loop_offset=0

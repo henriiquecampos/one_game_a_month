@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://objects/icrecream/icecream_topling.gd" type="Script" id=1]
 [ext_resource path="res://objects/icrecream/choco_topling.png" type="Texture" id=2]
 [ext_resource path="res://objects/basic_candy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/icrecream/9_icecreamhurt.ogg" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -93,7 +94,7 @@ length = 1.0
 loop = false
 step = 0.1
 
-[node name="icecream_topling" type="RigidBody2D"]
+[node name="icecream_topling" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -163,6 +164,10 @@ disabled = false
 
 anims/hurt = SubResource( 6 )
 anims/rest = SubResource( 7 )
+
+[node name="sfx" parent="candy" index="3"]
+
+stream = ExtResource( 4 )
 
 [connection signal="state_changed" from="candy" to="." method="_on_candy_state_changed"]
 

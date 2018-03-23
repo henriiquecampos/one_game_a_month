@@ -2,13 +2,17 @@
 
 [ext_resource path="res://screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=1]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends Node2D
 
 func _ready():
 	var t = $tween
-	t.interpolate_property(self, \"scale\", Vector2(0.5, 0.5), Vector2(1.0, 1.0), 0.5,
+	t.interpolate_property(self, \"scale\", Vector2(0.5, 0.5), Vector2(1.3, 1.3), 0.25,
+		t.TRANS_BACK, t.EASE_OUT)
+	t.start()
+	yield(t, \"tween_completed\")
+	t.interpolate_property(self, \"scale\", Vector2(1.3, 1.3), Vector2(1.0, 1.0), 0.25,
 		t.TRANS_BACK, t.EASE_OUT)
 	t.start()
 	yield(t, \"tween_completed\")
@@ -19,7 +23,7 @@ func _ready():
 	queue_free()
 "
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 
 size = 50
 use_mipmaps = false
@@ -31,7 +35,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 position = Vector2( 464, 328 )
 z_index = 3
-script = SubResource( 2 )
+script = SubResource( 1 )
 _sections_unfolded = [ "Visibility", "Z Index", "custom_fonts" ]
 
 [node name="tween" type="Tween" parent="." index="0"]
@@ -59,7 +63,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "{score}"
 percent_visible = 1.0
 lines_skipped = 0

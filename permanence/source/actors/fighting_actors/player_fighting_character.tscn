@@ -1,17 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://actors/fighting_actors/basic_fighting_character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/fighting_actors/player_fighting_character.gd" type="Script" id=2]
-[ext_resource path="res://actors/fighting_actors/animal_melee_sound.wav" type="AudioStream" id=3]
 
 [node name="player_fighter" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-
-[node name="sfx" parent="." index="8"]
-
-stream = ExtResource( 3 )
-bus = "player"
 
 

@@ -43,6 +43,8 @@ shape = SubResource( 1 )
 
 [node name="player_fighter" parent="." index="2" instance=ExtResource( 3 )]
 
+editor/display_folded = true
+
 [node name="right_punch" parent="player_fighter" index="0"]
 
 position = Vector2( 56, -63.8376 )
@@ -57,6 +59,7 @@ position = Vector2( 0, 24.1624 )
 
 [node name="cutout_sprites" parent="." index="3" instance=ExtResource( 4 )]
 
+editor/display_folded = true
 position = Vector2( 0, 0 )
 
 [node name="belly" parent="cutout_sprites" index="1"]
@@ -108,6 +111,16 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="." index="6"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="state_changed" from="." to="." method="_on_kinematic_state_changed"]
 

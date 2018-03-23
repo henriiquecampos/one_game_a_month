@@ -1,5 +1,4 @@
 extends "res://actors/fighting_actors/basic_fighting_character.gd"
-
 signal attacked(shape)
 func _input(event):
 	match state:
@@ -7,14 +6,12 @@ func _input(event):
 			if event.is_action_pressed("left"):
 				$left_punch.set_disabled(false)
 				emit_signal("attacked", LEFT_PUNCH)
-				punch()
 			elif event.is_action_released("left"):
 				$left_punch.set_disabled(true)
 				
 			elif event.is_action_pressed("right"):
 				$right_punch.set_disabled(false)
 				emit_signal("attacked", RIGHT_PUNCH)
-				punch()
 			elif event.is_action_released("right"):
 				$right_punch.set_disabled(true)
 			

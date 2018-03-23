@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/5_kick.ogg-d490001206a84f92bb66f824e9f00d91.oggstr"
+
+[deps]
+
+source_file="res://actors/fighting_pig/5_kick.ogg"
+source_md5="da28119f8703979e00f5b0fc91300933"
+
+dest_files=[ "res://.import/5_kick.ogg-d490001206a84f92bb66f824e9f00d91.oggstr" ]
+dest_md5="5ececafe64772591724ef3a276c57ae4"
+
+[params]
+
+loop=false
+loop_offset=0
