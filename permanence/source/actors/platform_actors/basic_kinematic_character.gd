@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-enum states {IDLE, WALK, JUMP, FALL}
+enum states {IDLE, WALK, JUMP, FALL, DEAD}
 var state = IDLE setget set_state, get_state
 
 export (int, 0, 500) var walk_speed = 100
@@ -17,6 +17,9 @@ signal state_changed(from, to)
 func set_state(new_state):
 	if state == new_state:
 		return
+	match state:
+		DEAD:
+			return
 	match new_state:
 		IDLE:
 			velocity = stop()

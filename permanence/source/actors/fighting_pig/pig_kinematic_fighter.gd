@@ -23,12 +23,16 @@ func _on_kinematic_state_changed(from, to):
 		FALL:
 			fighter.set_state(fighter.IDLE)
 			fighter.set_state(fighter.IN_AIR)
+		DEAD:
+			Input.stop_joy_vibration(0)
+			animator.play("dead")
 
 func _on_fighting_state_changed(from, to):
 	match to:
 		fighter.STAND:
-			animator.play("idle")
-			can_jump = true
+			if get_state() != DEAD:
+				animator.play("idle")
+				can_jump = true
 		fighter.IN_AIR:
 			match from:
 				fighter.STAND:
