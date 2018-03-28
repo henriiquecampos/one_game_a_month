@@ -3,6 +3,7 @@
 [ext_resource path="res://actors/fighting_actors/basic_fighting_character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/fighting_actors/player_fighting_character.gd" type="Script" id=2]
 
+
 [node name="player_fighter" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
