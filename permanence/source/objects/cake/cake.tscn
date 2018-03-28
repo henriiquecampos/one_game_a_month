@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://objects/flying_candy/flying_candy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/cake/cake.gd" type="Script" id=2]
+[ext_resource path="res://objects/cake/choco_cake.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 20 )
+
+[node name="cake" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+SPEED = 300
+
+[node name="sprite" parent="." index="0"]
+
+texture = ExtResource( 3 )
+
+[node name="shape" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="visibility" parent="." index="4"]
+
+rect = Rect2( -32, -18, 64, 37 )
+
+

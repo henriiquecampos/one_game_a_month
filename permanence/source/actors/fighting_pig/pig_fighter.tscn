@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://actors/platform_actors/player_kinematic_character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/fighting_pig/pig_fighter.gd" type="Script" id=2]
+[ext_resource path="res://actors/fighting_actors/player_fighting_character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/cutout_animation/pig_character/pig_character.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 64 )
+
+[node name="player_character" instance=ExtResource( 1 )]
+
+position = Vector2( 0, -0.16237 )
+script = ExtResource( 2 )
+walk_speed = 0
+jump_height = 1400
+
+[node name="shape" parent="." index="0"]
+
+position = Vector2( 0, -63.8376 )
+shape = SubResource( 1 )
+
+[node name="player_fighter" parent="." index="2" instance=ExtResource( 3 )]
+
+editor/display_folded = true
+
+[node name="right_punch" parent="player_fighter" index="0"]
+
+position = Vector2( 56, -63.8376 )
+
+[node name="left_punch" parent="player_fighter" index="1"]
+
+position = Vector2( -56, -63.8376 )
+
+[node name="sweep" parent="player_fighter" index="3"]
+
+position = Vector2( 0, -7.83763 )
+
+[node name="cutout_sprites" parent="." index="3" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+
+[node name="body" parent="cutout_sprites" index="1"]
+
+position = Vector2( 3.5, -36 )
+rotation = 0.0
+
+[node name="hand_right" parent="cutout_sprites/body" index="0"]
+
+position = Vector2( 35.5, -81.5 )
+rotation = 1.5418
+
+[node name="hand_left" parent="cutout_sprites/body" index="1"]
+
+position = Vector2( -0.5, -70 )
+rotation = 1.42068
+
+[node name="head" parent="cutout_sprites/body" index="2"]
+
+position = Vector2( -2, -97 )
+rotation = 0.0
+
+[node name="leg_right" parent="cutout_sprites" index="2"]
+
+position = Vector2( -23, -58.5 )
+rotation = 0.639874
+
+[node name="leg_left" parent="cutout_sprites" index="3"]
+
+position = Vector2( 38.5, -65.5 )
+
+[connection signal="state_changed" from="." to="." method="_on_kinematic_state_changed"]
+
+[connection signal="area_shape_entered" from="player_fighter" to="." method="_on_fighter_shape_entered"]
+
+[connection signal="state_changed" from="player_fighter" to="." method="_on_fighting_state_changed"]
+
+
+[editable path="player_fighter"]
+[editable path="cutout_sprites"]
