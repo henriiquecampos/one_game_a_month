@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/7_cakehurt.ogg-1710e242fba60fd995b88d6a9b63df10.oggstr"
+
+[deps]
+
+source_file="res://objects/cake/7_cakehurt.ogg"
+source_md5="7f2d4d8b990ecc4e72c1ac74bcf8ac79"
+
+dest_files=[ "res://.import/7_cakehurt.ogg-1710e242fba60fd995b88d6a9b63df10.oggstr" ]
+dest_md5="361e4dece50ebc17dbcaae4c1615f23e"
+
+[params]
+
+loop=false
+loop_offset=0

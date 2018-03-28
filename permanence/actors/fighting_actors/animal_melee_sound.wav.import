@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/animal_melee_sound.wav-1dbef198b32248f36f2059ca61c508f3.sample"
+
+[deps]
+
+source_file="res://actors/fighting_actors/animal_melee_sound.wav"
+source_md5="ef1956cee112ea7e8921254517c3607f"
+
+dest_files=[ "res://.import/animal_melee_sound.wav-1dbef198b32248f36f2059ca61c508f3.sample" ]
+dest_md5="dc606f7020030795b68cf62a796e3024"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

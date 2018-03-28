@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/no_pig_keeps_the_diet.ogg-2ca0bf7c52df0872a304a3dbdbb6b676.oggstr"
+
+[deps]
+
+source_file="res://no_pig_keeps_the_diet.ogg"
+source_md5="75d58d6b948299f539a261388979b75e"
+
+dest_files=[ "res://.import/no_pig_keeps_the_diet.ogg-2ca0bf7c52df0872a304a3dbdbb6b676.oggstr" ]
+dest_md5="09bbc48678febbef4382049014d8e049"
+
+[params]
+
+loop=false
+loop_offset=0

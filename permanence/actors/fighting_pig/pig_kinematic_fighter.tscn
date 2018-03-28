@@ -1,0 +1,138 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://actors/platform_actors/player_kinematic_character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/fighting_pig/pig_kinematic_fighter.gd" type="Script" id=2]
+[ext_resource path="res://actors/fighting_actors/player_fighting_character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/cutout_animation/pig_character/pig_character.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 64 )
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Node
+
+export(int) var max_health = 100
+onready var current_health = 0 setget set_health
+signal health_changed(value)
+
+func damage(amount):
+	set_health(-amount)
+	
+func recover(amount):
+	set_health(amount)
+	
+func set_health(value):
+	current_health += value
+	current_health = clamp(current_health, 0, max_health)
+	emit_signal(\"health_changed\", current_health)"
+
+[node name="player_character" instance=ExtResource( 1 )]
+
+pause_mode = 2
+position = Vector2( 0, -0.16237 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Pause" ]
+walk_speed = 0
+jump_height = 1400
+
+[node name="shape" parent="." index="0"]
+
+position = Vector2( 0, -63.8376 )
+shape = SubResource( 1 )
+
+[node name="player_fighter" parent="." index="2" instance=ExtResource( 3 )]
+
+pause_mode = 1
+editor/display_folded = true
+_sections_unfolded = [ "Pause", "Transform" ]
+
+[node name="right_punch" parent="player_fighter" index="0"]
+
+position = Vector2( 56, -63.8376 )
+
+[node name="left_punch" parent="player_fighter" index="1"]
+
+position = Vector2( -56, -63.8376 )
+
+[node name="down_kick" parent="player_fighter" index="3"]
+
+position = Vector2( 0, 24.1624 )
+
+[node name="cutout_sprites" parent="." index="3" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+
+[node name="belly" parent="cutout_sprites" index="1"]
+
+position = Vector2( 3.5, -37 )
+rotation = 0.0958418
+scale = Vector2( 1, 1 )
+
+[node name="body" parent="cutout_sprites" index="2"]
+
+position = Vector2( 3.5, -37 )
+rotation = 0.0958418
+
+[node name="hand_right" parent="cutout_sprites/body" index="0"]
+
+position = Vector2( 35.2942, -139.872 )
+rotation = -0.0556933
+
+[node name="hand_left" parent="cutout_sprites/body" index="1"]
+
+position = Vector2( 48.4925, -29.7081 )
+rotation = 0.0687108
+
+[node name="head" parent="cutout_sprites/body" index="2"]
+
+rotation = -0.596829
+region_rect = Rect2( 384, 0, 128, 128 )
+
+[node name="leg_left" parent="cutout_sprites" index="3"]
+
+position = Vector2( -26.5, -47 )
+rotation = 0.133228
+
+[node name="leg_right" parent="cutout_sprites" index="4"]
+
+position = Vector2( 45.5, -68.5 )
+rotation = 0.014473
+
+[node name="health" type="Node" parent="." index="4"]
+
+script = SubResource( 2 )
+max_health = 100
+
+[node name="tween" type="Tween" parent="." index="5"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="." index="6"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[connection signal="state_changed" from="." to="." method="_on_kinematic_state_changed"]
+
+[connection signal="area_shape_entered" from="player_fighter" to="." method="_on_fighter_shape_entered"]
+
+[connection signal="attacked" from="player_fighter" to="." method="_on_player_fighter_attacked"]
+
+[connection signal="state_changed" from="player_fighter" to="." method="_on_fighting_state_changed"]
+
+
+[editable path="player_fighter"]
+[editable path="cutout_sprites"]

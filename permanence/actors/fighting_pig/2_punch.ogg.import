@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/2_punch.ogg-7fb3d4d93440fef44f7522efcb6811a7.oggstr"
+
+[deps]
+
+source_file="res://actors/fighting_pig/2_punch.ogg"
+source_md5="dcec966ec3a583e200783323c31b9e25"
+
+dest_files=[ "res://.import/2_punch.ogg-7fb3d4d93440fef44f7522efcb6811a7.oggstr" ]
+dest_md5="d18774465ec027533cffe80f789faf4c"
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/9_icecreamhurt.ogg-7b8ba37552fd5f898bd30ab9e6fc1bc8.oggstr"
+
+[deps]
+
+source_file="res://objects/icrecream/9_icecreamhurt.ogg"
+source_md5="95e0bacc8056f308ed6b30efc24424f1"
+
+dest_files=[ "res://.import/9_icecreamhurt.ogg-7b8ba37552fd5f898bd30ab9e6fc1bc8.oggstr" ]
+dest_md5="872425e2415cd70005349bc9da6a70c9"
+
+[params]
+
+loop=false
+loop_offset=0
