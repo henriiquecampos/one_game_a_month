@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/melee_sound.wav-f0a9cd194af937eca24db2de487bb6d7.sample"
+
+[deps]
+
+source_file="res://actors/fighting_actors/melee_sound.wav"
+source_md5="e96db005e0756bb36ed4763179caa5c5"
+
+dest_files=[ "res://.import/melee_sound.wav-f0a9cd194af937eca24db2de487bb6d7.sample" ]
+dest_md5="780e4915805d3e72f95b7093574209b3"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
